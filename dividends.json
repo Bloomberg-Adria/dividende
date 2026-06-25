@@ -1,0 +1,137 @@
+{
+  "updated_at": "2026-06-25T11:19",
+  "dividends": [
+    {
+      "company": "AD Plastik",
+      "ticker": "ADPL",
+      "gross": 0.8,
+      "currency": "EUR",
+      "status": "approved",
+      "ex_date": "2026-07-22",
+      "record_date": "2026-07-23",
+      "payment_date": "2026-07-28",
+      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/67275"
+    },
+    {
+      "company": "Adris grupa (pref.)",
+      "ticker": "ADRS2",
+      "gross": 3.12,
+      "currency": "EUR",
+      "status": "ex",
+      "ex_date": "2026-06-17",
+      "record_date": "2026-06-18",
+      "payment_date": "2026-07-07",
+      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/67325"
+    },
+    {
+      "company": "Atlantic Grupa",
+      "ticker": "ATGR",
+      "gross": 1.75,
+      "currency": "EUR",
+      "status": "ex",
+      "ex_date": "2026-06-25",
+      "record_date": "2026-06-26",
+      "payment_date": "2026-07-02",
+      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/67443"
+    },
+    {
+      "company": "Hrvatska poštanska banka",
+      "ticker": "HPB",
+      "gross": 21.83,
+      "currency": "EUR",
+      "status": "paid",
+      "ex_date": "2026-01-05",
+      "record_date": "2026-01-07",
+      "payment_date": "2026-01-08",
+      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/64566"
+    },
+    {
+      "company": "Hrvatska poštanska banka",
+      "ticker": "HPB",
+      "gross": 21.83,
+      "currency": "EUR",
+      "status": "paid",
+      "ex_date": "2025-12-22",
+      "record_date": "2025-12-23",
+      "payment_date": "2025-12-31",
+      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/64148"
+    },
+    {
+      "company": "Hrvatski Telekom",
+      "ticker": "HT",
+      "gross": 1.69,
+      "currency": "EUR",
+      "status": "ex",
+      "ex_date": "2026-06-03",
+      "record_date": "2026-06-05",
+      "payment_date": "2026-07-03",
+      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/66893"
+    },
+    {
+      "company": "Končar – Distributivni i specijalni transformatori",
+      "ticker": "KODT",
+      "gross": 94.7,
+      "currency": "EUR",
+      "status": "ex",
+      "ex_date": "2026-06-23",
+      "record_date": "2026-06-24",
+      "payment_date": "2026-07-09",
+      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/67296"
+    },
+    {
+      "company": "Končar",
+      "ticker": "KOEI",
+      "gross": 4.0,
+      "currency": "EUR",
+      "status": "ex",
+      "ex_date": "2026-06-25",
+      "record_date": "2026-06-26",
+      "payment_date": "2026-07-10",
+      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/67345"
+    },
+    {
+      "company": "Podravka",
+      "ticker": "PODR",
+      "gross": 3.2,
+      "currency": "EUR",
+      "status": "approved",
+      "ex_date": "2026-06-29",
+      "record_date": "2026-06-30",
+      "payment_date": "2026-07-10",
+      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/67292"
+    },
+    {
+      "company": "Podravka",
+      "ticker": "PODR",
+      "gross": 3.2,
+      "currency": "EUR",
+      "status": "paid",
+      "ex_date": "2025-07-16",
+      "record_date": "2025-07-17",
+      "payment_date": "2025-07-30",
+      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/62097"
+    },
+    {
+      "company": "Valamar Riviera",
+      "ticker": "RIVP",
+      "gross": 0.27,
+      "currency": "EUR",
+      "status": "paid",
+      "ex_date": "2026-04-28",
+      "record_date": "2026-04-29",
+      "payment_date": "2026-05-07",
+      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/66053"
+    },
+    {
+      "company": "Žito",
+      "ticker": "ZITO",
+      "gross": 0.61,
+      "currency": "EUR",
+      "status": "ex",
+      "ex_date": "2026-06-25",
+      "record_date": "2026-06-26",
+      "payment_date": "2026-07-03",
+      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/67450"
+    }
+  ]
+}
