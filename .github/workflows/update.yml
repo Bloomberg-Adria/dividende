@@ -1,0 +1,38 @@
+name: Osvjezi dividende
+
+on:
+  schedule:
+    - cron: "0 6 * * *"      # svaki dan u 06:00 UTC (08:00 po nasem, ljeti)
+  workflow_dispatch:          # omogucuje rucno pokretanje gumbom
+
+permissions:
+  contents: write             # da robot smije spremiti novu dividends.json
+
+jobs:
+  azuriraj:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Preuzmi repozitorij
+        uses: actions/checkout@v4
+
+      - name: Pripremi Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pokreni robota
+        run: python dividende.py
+
+      - name: Spremi ako ima podataka
+        run: |
+          COUNT=$(python -c "import json;print(len(json.load(open('dividends.json')).get('dividends',[])))")
+          echo "Pronadjeno dividendi: $COUNT"
+          if [ "$COUNT" -eq "0" ]; then
+            echo "Nema podataka (vjerojatno problem s mrezom) - ne diram staru datoteku."
+            exit 0
+          fi
+          git config user.name "dividende-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add dividends.json
+          git diff --staged --quiet || git commit -m "Automatsko osvjezavanje dividendi ($COUNT)"
+          git push
