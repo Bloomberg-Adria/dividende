@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CROBEX10 · Pregled dividendi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1B2A;--ink-soft:#1B2D42;--paper:#F7F8FA;--surface:#FFFFFF;
+    --hair:#E2E6EC;--muted:#5A6675;--amber:#C8861E;--amber-bg:#FBF3E2;
+    --green:#2E7D5B;--green-bg:#E8F2EC;--blue:#2C5F8A;--blue-bg:#E7EFF6;--gray-bg:#EDEFF2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .num{font-family:'IBM Plex Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+  header{background:var(--ink);color:#fff;border-bottom:3px solid var(--amber)}
+  .head-inner{max-width:1080px;margin:0 auto;padding:22px 28px 20px}
+  .masthead{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .title-block h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;letter-spacing:-.01em;line-height:1.1}
+  .title-block .kicker{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+  .updated{text-align:right;font-size:12px;color:#9FB0C2;line-height:1.6}
+  .updated .num{color:#fff;font-weight:500}
+  .source-line{max-width:1080px;margin:0 auto;padding:0 28px;font-size:11.5px;color:#7E91A6;letter-spacing:.02em;border-top:1px solid rgba(255,255,255,.08)}
+  .source-line span{display:inline-block;padding:9px 0}
+
+  .sample-banner{display:none;max-width:1080px;margin:16px auto 0;padding:10px 16px;background:var(--amber-bg);border:1px solid #EBD4A4;border-radius:6px;color:#8A5E10;font-size:12.5px;font-weight:500}
+  .sample-banner.show{display:block}
+  .sample-banner b{font-weight:600}
+
+  .summary{max-width:1080px;margin:20px auto 0;padding:0 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .stat{background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:15px 18px}
+  .stat .label{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .stat .big{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin-top:7px;line-height:1.1}
+  .stat .sub{font-size:12px;color:var(--muted);margin-top:3px}
+  .stat .big.amber{color:var(--amber)}
+
+  main{max-width:1080px;margin:0 auto;padding:24px 28px 60px}
+  .board-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+  .board-head h2{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;letter-spacing:.02em}
+  .legend{font-size:11px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap}
+  .legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;vertical-align:middle}
+
+  .board{background:var(--surface);border:1px solid var(--hair);border-radius:10px;overflow:hidden}
+  .row{display:grid;grid-template-columns:1.7fr 1.3fr 1fr 1fr 1fr .8fr;align-items:center;gap:8px;padding:16px 20px;border-bottom:1px solid var(--hair);border-left:3px solid transparent}
+  .row:last-child{border-bottom:none}
+  .row.upcoming{border-left-color:var(--amber);background:linear-gradient(90deg,#FDFAF3,transparent 60%)}
+  .col-head{display:grid;grid-template-columns:1.7fr 1.3fr 1fr 1fr 1fr .8fr;gap:8px;padding:11px 20px 11px 23px;background:#FAFBFC;border-bottom:1px solid var(--hair);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .col-head .r{text-align:right}
+
+  .co .name{font-weight:600;font-size:14.5px}
+  .co .tk{font-size:11.5px;color:var(--muted);font-family:'IBM Plex Mono',monospace;margin-top:2px;letter-spacing:.02em}
+
+  .amount{text-align:left}
+  .amount .val{font-size:23px;font-weight:600;letter-spacing:-.01em}
+  .amount .unit{font-size:11px;color:var(--muted);font-weight:500;margin-left:2px}
+  .amount.none .val{font-size:15px;color:var(--muted);font-weight:400;font-family:'Inter',sans-serif}
+
+  .date .num{font-size:14px;font-weight:500}
+  .date .rel{font-size:11px;color:var(--muted);margin-top:2px}
+  .date .rel.soon{color:var(--amber);font-weight:600}
+  .date.empty{color:#B4BDC8}
+
+  .pill{justify-self:end;font-size:10.5px;font-weight:600;letter-spacing:.03em;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .pill.proposed{background:var(--gray-bg);color:#56606E}
+  .pill.approved{background:var(--blue-bg);color:var(--blue)}
+  .pill.ex{background:var(--amber-bg);color:var(--amber)}
+  .pill.paid{background:var(--green-bg);color:var(--green)}
+
+  .row a.src{color:inherit;text-decoration:none;display:block}
+  .row a.src:hover .name{text-decoration:underline}
+
+  footer{max-width:1080px;margin:0 auto;padding:0 28px 50px;font-size:11.5px;color:var(--muted);line-height:1.7}
+  footer b{color:var(--ink)}
+
+  @media (max-width:760px){
+    .summary{grid-template-columns:1fr;gap:10px}
+    .col-head{display:none}
+    .row{grid-template-columns:1fr auto;gap:6px 12px;padding:16px 16px 16px 17px}
+    .row .co{grid-column:1;grid-row:1}
+    .row .pill{grid-column:2;grid-row:1;align-self:start}
+    .amount{grid-column:1 / -1;grid-row:2;margin:10px 0 4px}
+    .date{grid-column:1 / -1;display:flex;justify-content:space-between;font-size:13px;padding:3px 0;border-top:1px dotted var(--hair)}
+    .date::before{content:attr(data-label);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;align-self:center}
+    .date .rel{display:inline;margin:0 0 0 8px}
+    .head-inner{padding:18px 18px 16px}
+    main{padding:20px 16px 48px}
+    .summary{padding:0 16px}
+    .source-line{padding:0 18px}
+    .sample-banner{margin:14px 16px 0}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="head-inner">
+    <div class="masthead">
+      <div class="title-block">
+        <div class="kicker">Zagrebačka burza · Sastavnice indeksa</div>
+        <h1>Pregled dividendi CROBEX10</h1>
+      </div>
+      <div class="updated">
+        Zadnje osvježeno<br>
+        <span class="num" id="updated-ts">—</span>
+      </div>
+    </div>
+  </div>
+  <div class="source-line"><span>Izvor: objave izdavatelja ZSE EHO · bruto iznosi po dionici prema odluci Glavne skupštine</span></div>
+</header>
+
+<div class="sample-banner" id="sample-banner">
+  <b>Prikazani ogledni podaci.</b> Zamjenski sadržaj za pregled izgleda — nije pronađena aktivna <span class="num">dividends.json</span> datoteka. Ne koristite ove brojke. Nakon postavljanja s ažuriranjem stvarne objave automatski zamjenjuju ovaj prikaz.
+</div>
+
+<div class="summary" id="summary"></div>
+
+<main>
+  <div class="board-head">
+    <h2>Objavljene i nadolazeće dividende</h2>
+    <div class="legend">
+      <span><i style="background:#56606E"></i>Predloženo</span>
+      <span><i style="background:#2C5F8A"></i>Odobreno</span>
+      <span><i style="background:#C8861E"></i>Ex-datum</span>
+      <span><i style="background:#2E7D5B"></i>Isplaćeno</span>
+    </div>
+  </div>
+  <div class="board" id="board">
+    <div class="col-head">
+      <div>Društvo</div><div>Dividenda / dionici</div><div>Ex-datum</div>
+      <div>Evidencija</div><div>Isplata</div><div class="r">Status</div>
+    </div>
+    <div id="rows"></div>
+  </div>
+</main>
+
+<footer>
+  Iznosi su <b>bruto</b> po dionici prema objavama Glavne skupštine na ZSE; neto ovisi o porezu po odbitku. Jedna dividenda prolazi kroz faze — predloženo → odobreno → ex-datum → isplaćeno — pa se isto društvo može pojaviti više puta kako se objava ažurira. Sastav indeksa revidira se tromjesečno; provjerite popis sastavnica prema aktualnom sastavu CROBEX10. Nije investicijski savjet.
+</footer>
+
+<script>
+// ─────────────────────────────────────────────────────────────
+// OGLEDNI PODACI — u radu ih zamjenjuje datoteka dividends.json
+// koja stoji pokraj ove stranice. Skripta za ažuriranje piše tu
+// datoteku. Oblik svakog zapisa identičan je donjem.
+// ─────────────────────────────────────────────────────────────
+const SAMPLE_DATA = [
+  {company:"Hrvatski Telekom",        ticker:"HT-R-A",   gross:3.12, currency:"EUR", status:"approved", ex_date:"2026-07-02", record_date:"2026-07-03", payment_date:"2026-07-17", source_url:"https://eho.zse.hr/en/issuer-announcements"},
+  {company:"Podravka",                ticker:"PODR-R-A", gross:7.00, currency:"EUR", status:"ex",       ex_date:"2026-06-26", record_date:"2026-06-29", payment_date:"2026-07-10", source_url:"https://eho.zse.hr/en/issuer-announcements"},
+  {company:"Zagrebačka Banka",        ticker:"ZABA-R-A", gross:13.52,currency:"EUR", status:"approved", ex_date:"2026-07-08", record_date:"2026-07-09", payment_date:"2026-07-22", source_url:"https://eho.zse.hr/en/issuer-announcements"},
+  {company:"Adris Grupa (pref.)",     ticker:"ADRS-P-A", gross:4.00, currency:"EUR", status:"proposed", ex_date:null,         record_date:null,        payment_date:null,        source_url:"https://eho.zse.hr/en/issuer-announcements"},
+  {company:"Ericsson Nikola Tesla",   ticker:"ERNT-R-A", gross:94.70,currency:"EUR", status:"paid",     ex_date:"2026-05-14", record_date:"2026-05-15", payment_date:"2026-05-29", source_url:"https://eho.zse.hr/en/issuer-announcements"},
+  {company:"Atlantic Grupa",          ticker:"ATGR-R-A", gross:16.80,currency:"EUR", status:"paid",     ex_date:"2026-06-05", record_date:"2026-06-06", payment_date:"2026-06-19", source_url:"https://eho.zse.hr/en/issuer-announcements"},
+  {company:"Končar",                  ticker:"KOEI-R-A", gross:41.77,currency:"EUR", status:"approved", ex_date:"2026-07-15", record_date:"2026-07-16", payment_date:"2026-07-29", source_url:"https://eho.zse.hr/en/issuer-announcements"},
+  {company:"Valamar Riviera",         ticker:"RIVP-R-A", gross:0.37, currency:"EUR", status:"proposed", ex_date:null,         record_date:null,        payment_date:null,        source_url:"https://eho.zse.hr/en/issuer-announcements"},
+  {company:"Hrvatska Poštanska Banka",ticker:"HPB-R-A",  gross:11.00,currency:"EUR", status:"approved", ex_date:"2026-07-10", record_date:"2026-07-11", payment_date:"2026-07-24", source_url:"https://eho.zse.hr/en/issuer-announcements"},
+  {company:"Span",                    ticker:"SPAN-R-A", gross:null, currency:"EUR", status:"proposed", ex_date:null,         record_date:null,        payment_date:null,        source_url:"https://eho.zse.hr/en/issuer-announcements"},
+];
+
+const MS_DAY = 86400000;
+const today = new Date(); today.setHours(0,0,0,0);
+
+function parseD(s){ if(!s) return null; const d=new Date(s+"T00:00:00"); return isNaN(d)?null:d; }
+function fmtD(d){ if(!d) return "—"; return String(d.getDate()).padStart(2,"0")+"."+String(d.getMonth()+1).padStart(2,"0")+"."+d.getFullYear()+"."; }
+function daysFrom(d){ return Math.round((d-today)/MS_DAY); }
+function danRijec(n){ return (n%10===1 && n%100!==11) ? "dan" : "dana"; }
+function relText(d){
+  if(!d) return "";
+  const n=daysFrom(d);
+  if(n===0) return "danas";
+  if(n===1) return "sutra";
+  if(n===-1) return "jučer";
+  if(n>0)  return "za "+n+" "+danRijec(n);
+  return "prije "+Math.abs(n)+" "+danRijec(Math.abs(n));
+}
+function statusRank(r){
+  const ex=parseD(r.ex_date);
+  if(ex && daysFrom(ex)>=0) return [0, daysFrom(ex)];
+  if(r.status==="proposed")  return [1, 0];
+  if(r.status==="approved")  return [1, 1];
+  const ref=parseD(r.payment_date)||parseD(r.ex_date);
+  return [2, ref ? -ref.getTime()/MS_DAY : 0];
+}
+
+function dateCell(label, ds, highlightSoon){
+  const d=parseD(ds);
+  if(!d) return `<div class="date empty" data-label="${label}">—</div>`;
+  const n=daysFrom(d);
+  const soon = highlightSoon && n>=0 && n<=7;
+  const rel = relText(d);
+  return `<div class="date" data-label="${label}">
+    <div class="num">${fmtD(d)}</div>
+    ${rel?`<div class="rel${soon?' soon':''}">${rel}</div>`:''}
+  </div>`;
+}
+
+function render(data){
+  data.sort((a,b)=>{ const [ga,sa]=statusRank(a),[gb,sb]=statusRank(b); return ga-gb || sa-sb; });
+
+  const upcomingEx = data.filter(r=>{const d=parseD(r.ex_date); return d && daysFrom(d)>=0;})
+                         .sort((a,b)=>parseD(a.ex_date)-parseD(b.ex_date));
+  const next = upcomingEx[0];
+  const within30 = upcomingEx.filter(r=>daysFrom(parseD(r.ex_date))<=30).length;
+  const declared = data.filter(r=>r.gross!=null).length;
+
+  document.getElementById("summary").innerHTML = `
+    <div class="stat">
+      <div class="label">Sljedeći ex-datum</div>
+      <div class="big amber">${next?fmtD(parseD(next.ex_date)):"—"}</div>
+      <div class="sub">${next?next.company+" · "+relText(parseD(next.ex_date)):"ništa zakazano"}</div>
+    </div>
+    <div class="stat">
+      <div class="label">Ex-datumi u idućih 30 dana</div>
+      <div class="big">${within30}</div>
+      <div class="sub">unutar indeksa</div>
+    </div>
+    <div class="stat">
+      <div class="label">Objavljene dividende</div>
+      <div class="big">${declared}<span style="font-size:14px;color:var(--muted)"> / ${data.length}</span></div>
+      <div class="sub">sastavnice s iznosom</div>
+    </div>`;
+
+  document.getElementById("rows").innerHTML = data.map(r=>{
+    const exD=parseD(r.ex_date);
+    const upcoming = exD && daysFrom(exD)>=0;
+    const amount = r.gross!=null
+      ? `<div class="amount num"><span class="val">${r.gross.toLocaleString("hr-HR",{minimumFractionDigits:2,maximumFractionDigits:r.gross<1?3:2})}</span><span class="unit">${r.currency}/dion.</span></div>`
+      : `<div class="amount none"><span class="val">čeka odluku</span></div>`;
+    const pill = {proposed:"Predloženo",approved:"Odobreno",ex:"Ex-datum",paid:"Isplaćeno"}[r.status]||r.status;
+    return `<div class="row${upcoming?' upcoming':''}">
+      <div class="co">
+        <a class="src" href="${r.source_url}" target="_blank" rel="noopener">
+          <div class="name">${r.company}</div>
+          <div class="tk">${r.ticker}</div>
+        </a>
+      </div>
+      ${amount}
+      ${dateCell("Ex-datum", r.ex_date, true)}
+      ${dateCell("Evidencija", r.record_date, false)}
+      ${dateCell("Isplata", r.payment_date, false)}
+      <div class="pill ${r.status}">${pill}</div>
+    </div>`;
+  }).join("");
+}
+
+async function init(){
+  let data = SAMPLE_DATA, live=false, stamp=null;
+  try{
+    const res = await fetch("dividends.json", {cache:"no-store"});
+    if(res.ok){
+      const j = await res.json();
+      const arr = Array.isArray(j) ? j : j.dividends;
+      if(Array.isArray(arr) && arr.length){ data=arr; live=true; stamp=j.updated_at||null; }
+    }
+  }catch(e){ /* nema json datoteke → ogledni način */ }
+
+  document.getElementById("sample-banner").classList.toggle("show", !live);
+  const ts = stamp ? new Date(stamp) : new Date();
+  document.getElementById("updated-ts").textContent =
+    fmtD(new Date(ts.getFullYear(),ts.getMonth(),ts.getDate())) + " " +
+    String(ts.getHours()).padStart(2,"0")+":"+String(ts.getMinutes()).padStart(2,"0") +
+    (live ? "" : " (ogledno)");
+  render(data.map(r=>({...r})));
+}
+init();
+</script>
+</body>
+</html>
