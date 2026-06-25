@@ -33,6 +33,10 @@ jobs:
           fi
           git config user.name "dividende-bot"
           git config user.email "actions@users.noreply.github.com"
+          # Uskladi se s najnovijim stanjem repozitorija da push ne bude odbijen,
+          # a nasu svjezu dividends.json zadrzi kao vazecu.
+          git fetch origin main
+          git reset --soft origin/main
           git add dividends.json
           git diff --staged --quiet || git commit -m "Automatsko osvjezavanje dividendi ($COUNT)"
-          git push
+          git push origin HEAD:main
