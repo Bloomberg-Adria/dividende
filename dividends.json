@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-06-26T07:18",
+  "updated_at": "2026-06-26T09:40",
   "dividends": [
     {
       "company": "AD Plastik",
       "ticker": "ADPL",
       "gross": 0.8,
       "currency": "EUR",
-      "status": "approved",
+      "status": "proposed",
       "ex_date": "2026-07-22",
       "record_date": "2026-07-23",
       "payment_date": "2026-07-28",
@@ -50,7 +50,7 @@
       "ticker": "HPB",
       "gross": 21.83,
       "currency": "EUR",
-      "status": "paid",
+      "status": "proposed",
       "ex_date": "2025-12-22",
       "record_date": "2025-12-23",
       "payment_date": "2025-12-31",
