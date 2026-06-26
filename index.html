@@ -93,6 +93,33 @@
     .source-line{padding:0 18px}
     .sample-banner{margin:14px 16px 0}
   }
+  /* --- sastav indeksa (dashboard) --- */
+  .sastav-wrap{max-width:1080px;margin:30px auto 0;padding:0 28px}
+  .sastav-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;gap:12px;flex-wrap:wrap}
+  .sastav-head h2{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;letter-spacing:.02em}
+  .sastav-head .meta{font-size:12px;color:var(--muted)}
+  .sastav-head .meta b{color:var(--ink);font-weight:600}
+  .sastav{background:var(--surface);border:1px solid var(--hair);border-radius:10px;overflow:hidden}
+  .scol-head,.srow{display:grid;grid-template-columns:.7fr 1.8fr 1.6fr .9fr .8fr;gap:12px;align-items:center;padding:12px 18px}
+  .scol-head{background:#FAFBFC;border-bottom:1px solid var(--hair);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .scol-head .r,.srow .r{text-align:right}
+  .srow{border-bottom:1px solid var(--hair)}
+  .srow:last-child{border-bottom:none}
+  .s-tk{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--blue)}
+  .s-co{font-weight:600;font-size:14px}
+  .s-weight{display:flex;align-items:center;gap:9px}
+  .wbar{flex:1;height:7px;background:#EDEFF2;border-radius:4px;overflow:hidden}
+  .wbar>span{display:block;height:100%;background:var(--amber);border-radius:4px}
+  .s-weight .wval{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);min-width:46px;text-align:right}
+  .s-price{font-family:'IBM Plex Mono',monospace;font-size:13px;text-align:right}
+  .s-chg{font-family:'IBM Plex Mono',monospace;font-size:12px;text-align:right;font-weight:500;color:var(--muted)}
+  .s-chg.up{color:var(--green)} .s-chg.down{color:#C0392B}
+  @media (max-width:760px){
+    .sastav-wrap{padding:0 16px}
+    .scol-head{display:none}
+    .srow{grid-template-columns:auto 1fr auto;gap:6px 10px;padding:13px 16px}
+    .srow .s-weight,.srow .s-chg{display:none}
+  }
 </style>
 </head>
 <body>
@@ -137,6 +164,20 @@
   </div>
 </main>
 
+<section class="sastav-wrap" id="sastav-wrap" style="display:none">
+  <div class="sastav-head">
+    <h2>Sastav indeksa CROBEX10</h2>
+    <div class="meta" id="sastav-meta"></div>
+  </div>
+  <div class="sastav">
+    <div class="scol-head">
+      <div>Oznaka</div><div>Društvo</div><div>Težina u indeksu</div>
+      <div class="r">Cijena</div><div class="r">Dnevno</div>
+    </div>
+    <div id="sastav-rows"></div>
+  </div>
+</section>
+
 <footer>
   Iznosi su <b>bruto</b> po dionici prema objavama Glavne skupštine na ZSE; neto ovisi o porezu po odbitku. Jedna dividenda prolazi kroz faze — predloženo → odobreno → ex-datum → isplaćeno — pa se isto društvo može pojaviti više puta kako se objava ažurira. Sastav indeksa revidira se tromjesečno; provjerite popis sastavnica prema aktualnom sastavu CROBEX10. Nije investicijski savjet.
 </footer>
@@ -158,6 +199,15 @@ const SAMPLE_DATA = [
   {company:"Valamar Riviera",         ticker:"RIVP-R-A", gross:0.37, currency:"EUR", status:"proposed", ex_date:null,         record_date:null,        payment_date:null,        source_url:"https://eho.zse.hr/en/issuer-announcements"},
   {company:"Hrvatska Poštanska Banka",ticker:"HPB-R-A",  gross:11.00,currency:"EUR", status:"approved", ex_date:"2026-07-10", record_date:"2026-07-11", payment_date:"2026-07-24", source_url:"https://eho.zse.hr/en/issuer-announcements"},
   {company:"Span",                    ticker:"SPAN-R-A", gross:null, currency:"EUR", status:"proposed", ex_date:null,         record_date:null,        payment_date:null,        source_url:"https://eho.zse.hr/en/issuer-announcements"},
+];
+
+// Ogledni sastav (za pregled izgleda kad nema dividends.json)
+const SAMPLE_SASTAV = [
+  {ticker:"HT",    company:"Hrvatski Telekom",    weight:"19,69%", price:"42,20",    change:"-0,24%"},
+  {ticker:"KOEI",  company:"Končar",              weight:"18,30%", price:"1.020,00", change:"+0,99%"},
+  {ticker:"PODR",  company:"Podravka",            weight:"17,54%", price:"165,00",   change:"+1,54%"},
+  {ticker:"ADRS2", company:"Adris grupa (pref.)", weight:"11,60%", price:"102,50",   change:"+2,71%"},
+  {ticker:"KODT",  company:"Končar – DST",        weight:"10,27%", price:"4.300,00", change:"-0,46%"},
 ];
 
 const MS_DAY = 86400000;
@@ -246,24 +296,55 @@ function render(data){
   }).join("");
 }
 
+function pctNum(s){
+  if(!s) return 0;
+  const m = String(s).replace("%","").replace(/\./g,"").replace(",",".").match(/-?\d+(\.\d+)?/);
+  return m ? parseFloat(m[0]) : 0;
+}
+function renderSastav(lista, kadaTekst){
+  if(!lista || !lista.length) return;
+  document.getElementById("sastav-wrap").style.display = "block";
+  const sorted = [...lista].sort((a,b)=>pctNum(b.weight)-pctNum(a.weight));
+  const max = Math.max(...sorted.map(s=>pctNum(s.weight)), 1);
+  document.getElementById("sastav-meta").innerHTML =
+    `<b>${lista.length}</b> sastavnica · zadnja provjera <span class="num">${kadaTekst}</span>`;
+  document.getElementById("sastav-rows").innerHTML = sorted.map(s=>{
+    const w = pctNum(s.weight);
+    const chg = pctNum(s.change);
+    const cls = chg>0 ? "up" : (chg<0 ? "down" : "");
+    return `<div class="srow">
+      <div class="s-tk">${s.ticker||""}</div>
+      <div class="s-co">${s.company||""}</div>
+      <div class="s-weight"><div class="wbar"><span style="width:${(w/max*100).toFixed(0)}%"></span></div><div class="wval">${s.weight||"—"}</div></div>
+      <div class="s-price">${s.price||"—"}</div>
+      <div class="s-chg ${cls}">${s.change||""}</div>
+    </div>`;
+  }).join("");
+}
+
 async function init(){
-  let data = SAMPLE_DATA, live=false, stamp=null;
+  let data = SAMPLE_DATA, comp = SAMPLE_SASTAV, live=false, stamp=null;
   try{
     const res = await fetch("dividends.json", {cache:"no-store"});
     if(res.ok){
       const j = await res.json();
       const arr = Array.isArray(j) ? j : j.dividends;
-      if(Array.isArray(arr) && arr.length){ data=arr; live=true; stamp=j.updated_at||null; }
+      if(Array.isArray(arr) && arr.length){
+        data=arr; live=true; stamp=j.updated_at||null;
+        comp = Array.isArray(j.composition) ? j.composition : [];
+      }
     }
   }catch(e){ /* nema json datoteke → ogledni način */ }
 
   document.getElementById("sample-banner").classList.toggle("show", !live);
   const ts = stamp ? new Date(stamp) : new Date();
-  document.getElementById("updated-ts").textContent =
+  const kadaTekst =
     fmtD(new Date(ts.getFullYear(),ts.getMonth(),ts.getDate())) + " " +
     String(ts.getHours()).padStart(2,"0")+":"+String(ts.getMinutes()).padStart(2,"0") +
     (live ? "" : " (ogledno)");
+  document.getElementById("updated-ts").textContent = kadaTekst;
   render(data.map(r=>({...r})));
+  renderSastav(comp, kadaTekst);
 }
 init();
 </script>
