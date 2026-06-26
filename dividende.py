@@ -64,19 +64,33 @@ def ocisti_naziv(s):
     return s.replace(" D.D.", " d.d.").replace(" D.D", " d.d")
 
 
+def _cisto(s):
+    """'1,43&nbsp;%' -> '1,43%'"""
+    return (s or "").replace("&nbsp;", "").strip()
+
+
 def dohvati_sastav():
-    """Procita aktualni sastav CROBEX10 sa ZSE. Vraca {isin: (simbol, naziv)}."""
+    """Procita aktualni sastav CROBEX10 sa ZSE.
+    Vraca (firme, sastav): firme = {isin: (simbol, naziv)} za obilazak,
+    sastav = lista za prikaz na stranici (oznaka, naziv, tezina, cijena, promjena)."""
     podaci = json.loads(dohvati(SASTAV_URL))
-    firme = {}
+    firme, sastav = {}, []
     for r in podaci.get("rows", []):
         isin, simbol = r.get("isin"), r.get("symbol")
         if not isin or not simbol:
             continue
         naziv = LIJEPA_IMENA.get(isin) or ocisti_naziv(r.get("name", simbol))
         firme[isin] = (simbol, naziv)
+        sastav.append({
+            "ticker": simbol,
+            "company": naziv,
+            "weight": _cisto(r.get("weight_percentage")),
+            "price": _cisto(r.get("last_price")),
+            "change": _cisto(r.get("change_prev_close_percentage")),
+        })
     if not firme:
         raise ValueError("sastav je prazan")
-    return firme
+    return firme, sastav
 
 
 def ocisti(h):
@@ -258,7 +272,7 @@ def obradi_firmu(isin, oznaka, naziv):
 def main():
     # 1) ucitaj aktualni sastav (s rezervom)
     try:
-        firme = dohvati_sastav()
+        firme, sastav = dohvati_sastav()
         print(f"Sastav CROBEX10 ucitan sa ZSE: {len(firme)} firmi.")
         novi = [i for i in firme if i not in LIJEPA_IMENA]
         otisli = [i for i in LIJEPA_IMENA if i not in firme]
@@ -269,6 +283,7 @@ def main():
     except Exception as e:
         print(f"Ne mogu ucitati sastav ({e}); koristim rezervni popis.")
         firme = REZERVNI_POPIS
+        sastav = []
 
     if SAMO:
         firme = {k: v for k, v in firme.items() if k in SAMO}
@@ -290,6 +305,7 @@ def main():
 
     with open("dividends.json", "w", encoding="utf-8") as f:
         json.dump({"updated_at": hrvatsko_vrijeme().isoformat(timespec="minutes"),
+                   "composition": sastav,
                    "dividends": sve}, f, ensure_ascii=False, indent=2)
     print("\n" + "-" * 60)
     print(f"Gotovo. Zapisano {len(sve)} dividend(i) u dividends.json")
