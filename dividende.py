@@ -137,15 +137,36 @@ def datum_iso(s):
     return f"{int(y):04d}-{int(mo):02d}-{int(d):02d}"
 
 
+def hrvatsko_vrijeme():
+    """Trenutno vrijeme po hrvatskom satu (ljeti +2, zimi +1 od UTC-a),
+    da oznaka 'Zadnje osvjezeno' na stranici bude po nasem vremenu."""
+    utc = datetime.datetime.utcnow()
+
+    def zadnja_nedjelja(godina, mjesec):
+        if mjesec == 12:
+            d = datetime.date(godina, 12, 31)
+        else:
+            d = datetime.date(godina, mjesec + 1, 1) - datetime.timedelta(days=1)
+        return d - datetime.timedelta(days=(d.weekday() + 1) % 7)
+
+    pocetak = datetime.datetime.combine(zadnja_nedjelja(utc.year, 3), datetime.time(1, 0))
+    kraj = datetime.datetime.combine(zadnja_nedjelja(utc.year, 10), datetime.time(1, 0))
+    ljetno = pocetak <= utc < kraj
+    return utc + datetime.timedelta(hours=2 if ljetno else 1)
+
+
 def status_iz(tip, ex, pay):
     t = (tip or "").lower()
     danas = datetime.date.today()
+    # Tip dividende ima prednost: ako ZSE kaze "Prijedlog", jos nije
+    # izglasano -> "predlozeno", bez obzira na datume.
+    if "prijedlog" in t or "predlo" in t or "najav" in t:
+        return "proposed"
+    # Inace je izglasano/odluceno -> status odredjuju datumi.
     if pay and datetime.date.fromisoformat(pay) < danas:
         return "paid"
     if ex and datetime.date.fromisoformat(ex) <= danas:
         return "ex"
-    if "predlo" in t or "najav" in t or "predujam" in t:
-        return "proposed"
     return "approved"
 
 
@@ -254,7 +275,7 @@ def main():
         time.sleep(1)
 
     with open("dividends.json", "w", encoding="utf-8") as f:
-        json.dump({"updated_at": datetime.datetime.now().isoformat(timespec="minutes"),
+        json.dump({"updated_at": hrvatsko_vrijeme().isoformat(timespec="minutes"),
                    "dividends": sve}, f, ensure_ascii=False, indent=2)
     print("\n" + "-" * 60)
     print(f"Gotovo. Zapisano {len(sve)} dividend(i) u dividends.json")
