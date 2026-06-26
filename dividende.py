@@ -170,9 +170,23 @@ def status_iz(tip, ex, pay):
     return "approved"
 
 
+def je_aktualna(h):
+    """ZSE oznacava vazecu verziju zelenom kvacicom (fa-check), a zastarjelu
+    (ispravljenu) crvenim iksicem (fa-times). Vraca False za zastarjele."""
+    i = h.find("Aktualna")
+    if i == -1:
+        return True            # nema oznake -> ne odbacujemo
+    isjecak = h[i:i + 300]
+    if "fa-times" in isjecak:
+        return False           # iksic -> zastarjelo, preskaci
+    return True                # kvacica ili nepoznato -> zadrzi
+
+
 def parsiraj_detalj(h, naziv, oznaka, view_url):
     if "Vrijednost dividende" not in h and "Informacije o dividendi" not in h:
         return None
+    if not je_aktualna(h):
+        return None            # zastarjela/ispravljena verzija -> preskaci
     t = ocisti(h)
     iznos = u_broj(raspon(t, "Vrijednost dividende", ["Po\u010detak trgovanja", "Datum stjecanja"]))
     ex = datum_iso(raspon(t, "bez dividende", ["Datum stjecanja"]))
