@@ -1,40 +1,48 @@
 # -*- coding: utf-8 -*-
 # ───────────────────────────────────────────────────────────────
-#  DIVIDENDE — pravi robot (verzija sa strukturiranim blokom)
+#  DIVIDENDE — pravi robot
 #
-#  Za svaku firmu: prolista arhivu objava (godinu unatrag), u\u0111e u
-#  objave koje izgledaju kao dividenda/skup\u0161tina, i u svakoj potra\u017ei
-#  blok "Informacije o dividendi". Ako ga na\u0111e -> izvu\u010de iznos i datume.
-#  Sve zapi\u0161e u  dividends.json.
+#  1. SAM ucita aktualni sastav CROBEX10 sa ZSE (vise ne diramo popis rukom)
+#  2. za svaku firmu prolista arhivu objava godinu unatrag
+#  3. u objavama nadje blok "Informacije o dividendi" i izvuce iznos + datume
+#  4. ocisti duplikate i zapise u  dividends.json
 #
-#  Pokre\u0107e\u0161:   python dividende.py
+#  Pokrece se:   python dividende.py
 # ───────────────────────────────────────────────────────────────
 
 import urllib.request, re, html, json, datetime, time
 
 BAZA = "https://eho.zse.hr"
 
-FIRME = {
-    "HRADPLRA0006": ("ADPL",  "AD Plastik"),
-    "HRADRSPA0009": ("ADRS2", "Adris grupa (pref.)"),
-    "HRATGRRA0003": ("ATGR",  "Atlantic Grupa"),
-    "HRHPB0RA0002": ("HPB",   "Hrvatska po\u0161tanska banka"),
-    "HRHT00RA0005": ("HT",    "Hrvatski Telekom"),
-    "HRKODTRA0007": ("KODT",  "Kon\u010dar \u2013 Distributivni i specijalni transformatori"),
-    "HRKOEIRA0009": ("KOEI",  "Kon\u010dar"),
-    "HRPODRRA0004": ("PODR",  "Podravka"),
-    "HRRIVPRA0000": ("RIVP",  "Valamar Riviera"),
-    "HRZTOSRB0002": ("ZITO",  "\u017dito"),
+# Sluzbeni izvor sastava indeksa (CROBEX10 ima ISIN HRZB00ICBE11)
+INDEX_ISIN = "HRZB00ICBE11"
+SASTAV_URL = f"https://zse.hr/json/IndexComposition?isin={INDEX_ISIN}&lng=hr&order=asc&sort=symbol"
+
+# Lijepa imena za prikaz (za firme koje poznajemo). Ako u indeks udje
+# nova firma koju ovdje nemamo, robot ce uzeti ime sa ZSE-a automatski.
+LIJEPA_IMENA = {
+    "HRADPLRA0006": "AD Plastik",
+    "HRADRSPA0009": "Adris grupa (pref.)",
+    "HRATGRRA0003": "Atlantic Grupa",
+    "HRHPB0RA0002": "Hrvatska po\u0161tanska banka",
+    "HRHT00RA0005": "Hrvatski Telekom",
+    "HRKODTRA0007": "Kon\u010dar \u2013 Distributivni i specijalni transformatori",
+    "HRKOEIRA0009": "Kon\u010dar",
+    "HRPODRRA0004": "Podravka",
+    "HRRIVPRA0000": "Valamar Riviera",
+    "HRZTOSRB0002": "\u017dito",
 }
 
-# None = svih 10 firmi. (Mo\u017ee\u0161 staviti npr. ["HRKOEIRA0009"] za test jedne.)
+# Rezervni popis ako ZSE sastav-servis bas taj dan ne radi.
+REZERVNI_POPIS = {isin: (None, naziv) for isin, naziv in LIJEPA_IMENA.items()}
+
+# None = sve firme iz sastava. (Mozes staviti npr. ["HRKOEIRA0009"] za test jedne.)
 SAMO = None
 
 DANA_UNATRAG = 365
 MAX_STRANICA = 12
 GODINU_DANA = datetime.date.today() - datetime.timedelta(days=DANA_UNATRAG)
 DAT = r'\d{2}\.\d{2}\.\d{4}'
-# objave koje vrijedi otvoriti (ostale ne diramo)
 KLJUCNE = ("dividend", "skup\u0161tin", "ex-datum", "ex datum")
 
 
@@ -44,10 +52,31 @@ def dohvati(url, pokusaja=3):
             z = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
             with urllib.request.urlopen(z, timeout=30) as o:
                 return o.read().decode("utf-8", errors="ignore")
-        except Exception as e:
+        except Exception:
             if n == pokusaja - 1:
                 raise
-            time.sleep(2)   # kratka pauza pa poku\u0161aj ponovno
+            time.sleep(2)
+
+
+def ocisti_naziv(s):
+    """'AD PLASTIK D.D.' -> 'Ad Plastik d.d.' (da ne vristi velikim slovima)."""
+    s = (s or "").strip().title()
+    return s.replace(" D.D.", " d.d.").replace(" D.D", " d.d")
+
+
+def dohvati_sastav():
+    """Procita aktualni sastav CROBEX10 sa ZSE. Vraca {isin: (simbol, naziv)}."""
+    podaci = json.loads(dohvati(SASTAV_URL))
+    firme = {}
+    for r in podaci.get("rows", []):
+        isin, simbol = r.get("isin"), r.get("symbol")
+        if not isin or not simbol:
+            continue
+        naziv = LIJEPA_IMENA.get(isin) or ocisti_naziv(r.get("name", simbol))
+        firme[isin] = (simbol, naziv)
+    if not firme:
+        raise ValueError("sastav je prazan")
+    return firme
 
 
 def ocisti(h):
@@ -55,7 +84,6 @@ def ocisti(h):
 
 
 def procitaj_listu(h):
-    """Iz stranice popisa vrati objave: datum, tekst, link na detalj (/view/ID)."""
     objave = []
     datumi = list(re.finditer(r'(\d{2})\.(\d{2})\.(\d{4})\.\s*\d{2}:\d{2}', h))
     for i, m in enumerate(datumi):
@@ -122,7 +150,6 @@ def status_iz(tip, ex, pay):
 
 
 def parsiraj_detalj(h, naziv, oznaka, view_url):
-    """Ako stranica detalja ima blok o dividendi, vrati zapis; ina\u010de None."""
     if "Vrijednost dividende" not in h and "Informacije o dividendi" not in h:
         return None
     t = ocisti(h)
@@ -145,8 +172,6 @@ def parsiraj_detalj(h, naziv, oznaka, view_url):
 
 
 def dedup(zapisi):
-    """Ista firma + isti iznos + isti ex-datum = jedna dividenda.
-    Zadr\u017eava onu iz najnovije objave (ispravak gazi staro)."""
     najbolji = {}
     for z in zapisi:
         kljuc = (z["ticker"], z["gross"], z["ex_date"])
@@ -159,7 +184,6 @@ def dedup(zapisi):
 
 
 def obradi_firmu(isin, oznaka, naziv):
-    # 1) skupi kandidate (datum + link na detalj) iz arhive
     url = f"{BAZA}/obavijesti-izdavatelja/filter/{isin}"
     stranica, kandidati = 1, []
     while url and stranica <= MAX_STRANICA:
@@ -181,7 +205,6 @@ def obradi_firmu(isin, oznaka, naziv):
         stranica += 1
         time.sleep(1)
 
-    # 2) u\u0111i u svaku kandidat-objavu i potra\u017ei blok
     nadjene = []
     print(f"({len(kandidati)} objava za provjeru)", end=" ", flush=True)
     for datum, view in kandidati:
@@ -191,15 +214,31 @@ def obradi_firmu(isin, oznaka, naziv):
             continue
         zapis = parsiraj_detalj(h, naziv, oznaka, view)
         if zapis:
-            zapis["_objava"] = datum.isoformat()   # za biranje najnovije
+            zapis["_objava"] = datum.isoformat()
             nadjene.append(zapis)
         time.sleep(0.5)
     return dedup(nadjene)
 
 
 def main():
-    firme = {k: v for k, v in FIRME.items() if (SAMO is None or k in SAMO)}
-    print(f"Tra\u017eim dividende od {GODINU_DANA.isoformat()} do danas, za {len(firme)} firmu(e).\n")
+    # 1) ucitaj aktualni sastav (s rezervom)
+    try:
+        firme = dohvati_sastav()
+        print(f"Sastav CROBEX10 ucitan sa ZSE: {len(firme)} firmi.")
+        novi = [i for i in firme if i not in LIJEPA_IMENA]
+        otisli = [i for i in LIJEPA_IMENA if i not in firme]
+        if novi:
+            print("  ! NOVO u indeksu:", ", ".join(firme[i][0] for i in novi))
+        if otisli:
+            print("  ! IZASLO iz indeksa:", ", ".join(LIJEPA_IMENA[i] for i in otisli))
+    except Exception as e:
+        print(f"Ne mogu ucitati sastav ({e}); koristim rezervni popis.")
+        firme = REZERVNI_POPIS
+
+    if SAMO:
+        firme = {k: v for k, v in firme.items() if k in SAMO}
+
+    print(f"Trazim dividende od {GODINU_DANA.isoformat()} do danas, za {len(firme)} firmu(e).\n")
     sve = []
     for isin, (oznaka, naziv) in firme.items():
         print(f"  {naziv} ({oznaka})...", end=" ", flush=True)
@@ -217,7 +256,7 @@ def main():
     with open("dividends.json", "w", encoding="utf-8") as f:
         json.dump({"updated_at": datetime.datetime.now().isoformat(timespec="minutes"),
                    "dividends": sve}, f, ensure_ascii=False, indent=2)
-    print("\n" + "─" * 60)
+    print("\n" + "-" * 60)
     print(f"Gotovo. Zapisano {len(sve)} dividend(i) u dividends.json")
 
 
