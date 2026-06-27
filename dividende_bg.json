@@ -1,0 +1,122 @@
+{
+  "updated_at": "2026-06-27T12:13",
+  "composition": [
+    {
+      "ticker": "AERO",
+      "company": "Aerodrom Nikola Tesla",
+      "weight": "20,00%"
+    },
+    {
+      "ticker": "DNOS",
+      "company": "Dunav osiguranje",
+      "weight": "20,00%"
+    },
+    {
+      "ticker": "NIIS",
+      "company": "NIS",
+      "weight": "20,00%"
+    },
+    {
+      "ticker": "TGAS",
+      "company": "Messer Tehnogas",
+      "weight": "17,22%"
+    },
+    {
+      "ticker": "MTLC",
+      "company": "Metalac",
+      "weight": "10,93%"
+    },
+    {
+      "ticker": "IMPL",
+      "company": "Impol Seval",
+      "weight": "3,57%"
+    },
+    {
+      "ticker": "JESV",
+      "company": "Jedinstvo",
+      "weight": "3,26%"
+    },
+    {
+      "ticker": "FINT",
+      "company": "Fintel energija",
+      "weight": "2,99%"
+    },
+    {
+      "ticker": "ENHL",
+      "company": "Energoprojekt holding",
+      "weight": "2,03%"
+    }
+  ],
+  "dividends": [
+    {
+      "ticker": "AERO",
+      "company": "Aerodrom Nikola Tesla",
+      "gross": null,
+      "record_date": null,
+      "pub_date": "30.12.2025",
+      "status": "spominje (provjeri)",
+      "title": "Prospekt za javnu ponudu običnih akcija 5. emisije - Aerodrom Nikola Tesla a.d. , Beograd",
+      "url": "https://bgdx.rs/data/2025/12/00144050.pdf"
+    },
+    {
+      "ticker": "DNOS",
+      "company": "Dunav osiguranje",
+      "gross": "121,45",
+      "record_date": "2025-04-20",
+      "pub_date": "30.04.2025",
+      "status": "odluka",
+      "title": "Odluka o raspodeli dobiti za 2024. godinu - Dunav osiguranje a.d. , Beograd",
+      "url": "https://bgdx.rs/data/2025/04/00141616.pdf"
+    },
+    {
+      "ticker": "NIIS",
+      "company": "NIS",
+      "gross": "28,18",
+      "record_date": "2025-06-10",
+      "pub_date": "20.10.2025",
+      "status": "odluka",
+      "title": "Obaveštenje o isplati dividende za 2024. godinu - NIS a.d., Novi Sad",
+      "url": "https://bgdx.rs/data/2025/10/00143758.pdf"
+    },
+    {
+      "ticker": "TGAS",
+      "company": "Messer Tehnogas",
+      "gross": "1.115,00",
+      "record_date": "2026-06-02",
+      "pub_date": "15.06.2026",
+      "status": "odluka",
+      "title": "Odluka o raspodeli dobiti - Messer Tehnogas a.d. , Beograd",
+      "url": "https://bgdx.rs/data/2026/06/00145787.pdf"
+    },
+    {
+      "ticker": "MTLC",
+      "company": "Metalac",
+      "gross": "95,00",
+      "record_date": "2026-05-10",
+      "pub_date": "21.05.2026",
+      "status": "odluka",
+      "title": "Izveštaj sa održane Skupštine akcionara - Metalac a.d. , Gornji Milanovac",
+      "url": "https://bgdx.rs/data/2026/05/00145385.pdf"
+    },
+    {
+      "ticker": "IMPL",
+      "company": "Impol Seval",
+      "gross": "372,50",
+      "record_date": "2025-06-09",
+      "pub_date": "12.08.2025",
+      "status": "odluka",
+      "title": "Obaveštenje o isplati dividende - Impol Seval a.d. , Sevojno",
+      "url": "https://bgdx.rs/data/2025/08/00143171.pdf"
+    },
+    {
+      "ticker": "JESV",
+      "company": "Jedinstvo",
+      "gross": "964,71",
+      "record_date": null,
+      "pub_date": "26.06.2026",
+      "status": "odluka",
+      "title": "Izveštaj sa održane Skupštine akcionara sa odlukama - Jedinstvo a.d. , Sevojno",
+      "url": "https://bgdx.rs/data/2026/06/00146105.pdf"
+    }
+  ]
+}
