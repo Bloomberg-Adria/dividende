@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BELEX15 · Pregled dividendi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1B2A;--ink-soft:#1B2D42;--paper:#F7F8FA;--surface:#FFFFFF;
+    --hair:#E2E6EC;--muted:#5A6675;--amber:#C8861E;--amber-bg:#FBF3E2;
+    --green:#2E7D5B;--green-bg:#E8F2EC;--blue:#2C5F8A;--blue-bg:#E7EFF6;--gray-bg:#EDEFF2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .num{font-family:'IBM Plex Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+  header{background:var(--ink);color:#fff;border-bottom:3px solid var(--amber)}
+  .head-inner{max-width:1080px;margin:0 auto;padding:22px 28px 20px}
+  .masthead{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .title-block h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;letter-spacing:-.01em;line-height:1.1}
+  .title-block .kicker{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+  .updated{text-align:right;font-size:12px;color:#9FB0C2;line-height:1.6}
+  .updated .num{color:#fff;font-weight:500}
+  .source-line{max-width:1080px;margin:0 auto;padding:0 28px;font-size:11.5px;color:#7E91A6;letter-spacing:.02em;border-top:1px solid rgba(255,255,255,.08)}
+  .source-line span{display:inline-block;padding:9px 0}
+
+  .sample-banner{display:none;max-width:1080px;margin:16px auto 0;padding:10px 16px;background:var(--amber-bg);border:1px solid #EBD4A4;border-radius:6px;color:#8A5E10;font-size:12.5px;font-weight:500}
+  .sample-banner.show{display:block}
+  .sample-banner b{font-weight:600}
+
+  .summary{max-width:1080px;margin:20px auto 0;padding:0 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .stat{background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:15px 18px}
+  .stat .label{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .stat .big{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600;margin-top:7px;line-height:1.1}
+  .stat .sub{font-size:12px;color:var(--muted);margin-top:3px}
+  .stat .big.amber{color:var(--amber)}
+
+  main{max-width:1080px;margin:0 auto;padding:24px 28px 10px}
+  .board-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px}
+  .board-head h2{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;letter-spacing:.02em}
+  .legend{font-size:11px;color:var(--muted);display:flex;gap:14px;flex-wrap:wrap}
+  .legend i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px;vertical-align:middle}
+
+  .board{background:var(--surface);border:1px solid var(--hair);border-radius:10px;overflow:hidden}
+  .colhead,.row{display:grid;grid-template-columns:1.9fr 1.2fr 1.2fr .9fr;align-items:center;gap:10px;padding:14px 20px}
+  .colhead{background:#FAFBFC;border-bottom:1px solid var(--hair);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .colhead .r,.row .r{text-align:right}
+  .row{border-bottom:1px solid var(--hair);border-left:3px solid transparent}
+  .row:last-child{border-bottom:none}
+  .row.has:hover{background:#FCFCFD}
+  .row.ok{border-left-color:var(--green)}
+  .co{font-weight:600;font-size:15px}
+  .tk{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--blue);margin-top:2px}
+  .amt{font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:600;text-align:right}
+  .amt small{font-weight:400;color:var(--muted);font-size:11px}
+  .amt.none{color:var(--muted);font-size:13px;font-weight:400}
+  .dd{font-family:'IBM Plex Mono',monospace;font-size:13px;text-align:right}
+  .dd small{display:block;color:var(--muted);font-size:10.5px;font-family:'Inter';letter-spacing:.04em}
+  .pill{justify-self:end;font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;white-space:nowrap}
+  .pill.ok{background:var(--green-bg);color:var(--green)}
+  .pill.warn{background:var(--amber-bg);color:var(--amber)}
+  .pill.muted{background:var(--gray-bg);color:var(--muted)}
+
+  /* sastav indeksa */
+  .sastav-wrap{max-width:1080px;margin:30px auto 0;padding:0 28px}
+  .sastav-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;gap:12px;flex-wrap:wrap}
+  .sastav-head h2{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600}
+  .sastav-head .meta{font-size:12px;color:var(--muted)}
+  .sastav-head .meta b{color:var(--ink);font-weight:600}
+  .sastav{background:var(--surface);border:1px solid var(--hair);border-radius:10px;overflow:hidden}
+  .scol-head,.srow{display:grid;grid-template-columns:.7fr 2.1fr 1.6fr;gap:12px;align-items:center;padding:12px 18px}
+  .scol-head{background:#FAFBFC;border-bottom:1px solid var(--hair);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .srow{border-bottom:1px solid var(--hair)}
+  .srow:last-child{border-bottom:none}
+  .s-tk{font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:var(--blue)}
+  .s-co{font-weight:600;font-size:14px}
+  .s-weight{display:flex;align-items:center;gap:9px}
+  .wbar{flex:1;height:7px;background:#EDEFF2;border-radius:4px;overflow:hidden}
+  .wbar>span{display:block;height:100%;background:var(--amber);border-radius:4px}
+  .s-weight .wval{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--muted);min-width:52px;text-align:right}
+
+  footer{max-width:1080px;margin:0 auto;padding:22px 28px 60px;font-size:12px;color:var(--muted);line-height:1.7}
+  footer b{color:var(--ink-soft);font-weight:600}
+
+  @media (max-width:760px){
+    .summary{grid-template-columns:1fr;gap:10px}
+    .head-inner,main{padding-left:16px;padding-right:16px}
+    .sastav-wrap{padding:0 16px}
+    .colhead{display:none}
+    .row{grid-template-columns:1fr auto;gap:6px 10px;padding:14px 16px}
+    .row .dd{grid-column:1;grid-row:2;text-align:left}
+    .row .amt{grid-column:2;grid-row:1}
+    .row .pill{grid-column:2;grid-row:2}
+    .scol-head{display:none}
+    .srow{grid-template-columns:auto 1fr;gap:4px 10px}
+    .srow .s-weight{grid-column:1 / -1;margin-top:8px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-inner">
+    <div class="masthead">
+      <div class="title-block">
+        <div class="kicker">Beogradska berza · BELEX15</div>
+        <h1>Pregled dividendi BELEX15</h1>
+      </div>
+      <div class="updated">Zadnje osvježeno<br><span class="num" id="updated-ts">—</span></div>
+    </div>
+  </div>
+  <div class="source-line"><span>Izvor: objave izdavatelja Beogradske berze (bgdx.rs) · iznosi su <b style="color:#9FB0C2">bruto</b> po akciji · OCR čitanje dokumenata</span></div>
+</header>
+
+<div class="sample-banner" id="sample-banner">Prikazani su <b>ogledni podaci</b> — robot još nije napunio <b>dividende_bg.json</b>.</div>
+
+<section class="summary" id="summary"></section>
+
+<main>
+  <div class="board-head">
+    <h2>Dividende po društvu (TTM)</h2>
+    <div class="legend">
+      <span><i style="background:var(--green)"></i>Odluka</span>
+      <span><i style="background:var(--amber)"></i>Najava</span>
+      <span><i style="background:var(--muted)"></i>Provjeri</span>
+    </div>
+  </div>
+  <div class="board">
+    <div class="colhead">
+      <div>Društvo</div><div class="r">Dividenda</div><div class="r">Dan dividende</div><div class="r">Status</div>
+    </div>
+    <div id="rows"></div>
+  </div>
+</main>
+
+<section class="sastav-wrap" id="sastav-wrap" style="display:none">
+  <div class="sastav-head">
+    <h2>Sastav indeksa BELEX15</h2>
+    <div class="meta" id="sastav-meta"></div>
+  </div>
+  <div class="sastav">
+    <div class="scol-head"><div>Oznaka</div><div>Društvo</div><div>Težina u indeksu</div></div>
+    <div id="sastav-rows"></div>
+  </div>
+</section>
+
+<footer>
+  Iznosi su <b>bruto</b> dinara (RSD) po akciji prema objavama na Beogradskoj berzi; neto ovisi o porezu po odbitku (za domaća fizička lica obično −15%). Podaci se čitaju automatski (OCR) iz objavljenih dokumenata pa su <b>informativni</b> — status <b>Odluka</b> znači da je iznos pronađen u dokumentu, a <b>Najava/Provjeri</b> da dividenda postoji ali iznos nije izvučen. Prikazuje se najnovija dividenda po društvu unutar posljednjih ~12 mjeseci (TTM). Sastav indeksa revidira se tromjesečno. Nije investicijski savjet.
+</footer>
+
+<script>
+const SAMPLE_BG = [
+  {ticker:"DNOS",company:"Dunav osiguranje",gross:"121,45",record_date:"2025-04-20",status:"odluka"},
+  {ticker:"NIIS",company:"NIS",gross:"28,18",record_date:"2025-06-10",status:"odluka"},
+  {ticker:"TGAS",company:"Messer Tehnogas",gross:"1.115,00",record_date:"2026-06-02",status:"odluka"},
+  {ticker:"MTLC",company:"Metalac",gross:"95,00",record_date:null,status:"odluka"},
+  {ticker:"IMPL",company:"Impol Seval",gross:"372,50",record_date:"2025-06-09",status:"odluka"},
+  {ticker:"JESV",company:"Jedinstvo",gross:"964,71",record_date:"2025-12-31",status:"odluka"},
+  {ticker:"AERO",company:"Aerodrom Nikola Tesla",gross:null,record_date:null,status:"spominje (provjeri)"},
+];
+const SAMPLE_SASTAV_BG = [
+  {ticker:"AERO",company:"Aerodrom Nikola Tesla",weight:"20,00%"},
+  {ticker:"DNOS",company:"Dunav osiguranje",weight:"20,00%"},
+  {ticker:"NIIS",company:"NIS",weight:"20,00%"},
+  {ticker:"TGAS",company:"Messer Tehnogas",weight:"17,22%"},
+  {ticker:"MTLC",company:"Metalac",weight:"10,93%"},
+  {ticker:"IMPL",company:"Impol Seval",weight:"3,57%"},
+  {ticker:"JESV",company:"Jedinstvo",weight:"3,26%"},
+  {ticker:"FINT",company:"Fintel energija",weight:"2,99%"},
+  {ticker:"ENHL",company:"Energoprojekt holding",weight:"2,03%"},
+];
+
+const MJ = ["01","02","03","04","05","06","07","08","09","10","11","12"];
+function fmtDate(iso){
+  if(!iso) return null;
+  const m = String(iso).match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if(!m) return null;
+  return `${m[3]}.${m[2]}.${m[1]}.`;
+}
+function pctNum(s){
+  if(!s) return 0;
+  const m = String(s).replace("%","").replace(/\./g,"").replace(",",".").match(/-?\d+(\.\d+)?/);
+  return m ? parseFloat(m[0]) : 0;
+}
+function statusPill(status){
+  const s = (status||"").toLowerCase();
+  if(s.startsWith("odluka")) return ['ok','Odluka'];
+  if(s.startsWith("najava")) return ['warn','Najava'];
+  return ['muted','Provjeri'];
+}
+
+function render(divs){
+  const wrap = document.getElementById("rows");
+  // s iznosom prvo (po nicemu posebnom), pa provjere na kraj
+  const sorted = [...divs].sort((a,b)=> (a.gross?0:1) - (b.gross?0:1));
+  wrap.innerHTML = sorted.map(d=>{
+    const [cls,label] = statusPill(d.status);
+    const dan = fmtDate(d.record_date);
+    const amt = d.gross
+      ? `<div class="amt">${d.gross} <small>RSD/akc.</small></div>`
+      : `<div class="amt none">—</div>`;
+    return `<div class="row has ${d.gross?'ok':''}">
+      <div><div class="co">${d.company||""}</div><div class="tk">${d.ticker||""}</div></div>
+      ${amt}
+      <div class="dd">${dan? dan : '<span style="color:var(--muted)">—</span>'}${dan?'<small>dan dividende</small>':''}</div>
+      <div class="pill ${cls}">${label}</div>
+    </div>`;
+  }).join("");
+}
+
+function renderSummary(divs, kada){
+  const sIznosom = divs.filter(d=>d.gross).length;
+  const el = document.getElementById("summary");
+  el.innerHTML = `
+    <div class="stat"><div class="label">S dividendom (TTM)</div>
+      <div class="big amber">${sIznosom}</div><div class="sub">od 9 sastavnica BELEX15</div></div>
+    <div class="stat"><div class="label">Praćeno društava</div>
+      <div class="big">9</div><div class="sub">cijeli indeks BELEX15</div></div>
+    <div class="stat"><div class="label">Zadnja provjera</div>
+      <div class="big num" style="font-size:18px">${kada.split(' ')[0]||'—'}</div>
+      <div class="sub">${kada.split(' ')[1]||''} · OCR robot na GitHubu</div></div>`;
+}
+
+function renderSastav(lista, kada){
+  if(!lista || !lista.length) return;
+  document.getElementById("sastav-wrap").style.display = "block";
+  const sorted = [...lista].sort((a,b)=>pctNum(b.weight)-pctNum(a.weight));
+  const max = Math.max(...sorted.map(s=>pctNum(s.weight)), 1);
+  document.getElementById("sastav-meta").innerHTML =
+    `<b>${lista.length}</b> sastavnica · zadnja provjera <span class="num">${kada}</span>`;
+  document.getElementById("sastav-rows").innerHTML = sorted.map(s=>{
+    const w = pctNum(s.weight);
+    return `<div class="srow">
+      <div class="s-tk">${s.ticker||""}</div>
+      <div class="s-co">${s.company||""}</div>
+      <div class="s-weight"><div class="wbar"><span style="width:${(w/max*100).toFixed(0)}%"></span></div><div class="wval">${s.weight||"—"}</div></div>
+    </div>`;
+  }).join("");
+}
+
+async function init(){
+  let divs = SAMPLE_BG, comp = SAMPLE_SASTAV_BG, live = false, stamp = null;
+  try{
+    const res = await fetch("dividende_bg.json", {cache:"no-store"});
+    if(res.ok){
+      const j = await res.json();
+      if(Array.isArray(j.dividends) && j.dividends.length){
+        divs = j.dividends; live = true; stamp = j.updated_at || null;
+        comp = Array.isArray(j.composition) ? j.composition : [];
+      }
+    }
+  }catch(e){ /* nema datoteke -> ogledni nacin */ }
+
+  document.getElementById("sample-banner").classList.toggle("show", !live);
+  const ts = stamp ? new Date(stamp) : new Date();
+  const kada = `${fmtDate(ts.toISOString())} ${String(ts.getHours()).padStart(2,"0")}:${String(ts.getMinutes()).padStart(2,"0")}` + (live ? "" : " (ogledno)");
+  document.getElementById("updated-ts").textContent = kada;
+
+  renderSummary(divs, kada);
+  render(divs);
+  renderSastav(comp, kada);
+}
+init();
+</script>
+</body>
+</html>
