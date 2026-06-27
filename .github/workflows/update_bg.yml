@@ -1,0 +1,57 @@
+name: Beograd dividende (BELEX15)
+
+on:
+  schedule:
+    - cron: "0 5 * * *"      # svaki dan u 05:00 UTC
+  workflow_dispatch:          # rucno pokretanje (gumb "Run workflow")
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Preuzmi repozitorij
+        uses: actions/checkout@v4
+
+      - name: Instaliraj Tesseract (cirilica + latinica) i Poppler
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-srp poppler-utils wget
+          # dodaj srpsku latinicu (srp_latn) pokraj cirilice (srp)
+          TESSDATA_DIR=$(dirname "$(find /usr/share -name srp.traineddata 2>/dev/null | head -1)")
+          echo "tessdata mapa: $TESSDATA_DIR"
+          sudo wget -q -O "$TESSDATA_DIR/srp_latn.traineddata" \
+            https://github.com/tesseract-ocr/tessdata_fast/raw/main/srp_latn.traineddata
+          echo "Instalirani jezici:"
+          tesseract --list-langs
+
+      - name: Postavi Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instaliraj Python pakete
+        run: pip install pytesseract pdf2image
+
+      - name: Pokreni beogradski robot (svih 9 firmi)
+        run: python bg_robot.py SVE
+
+      - name: Spremi rezultat na GitHub
+        run: |
+          if [ ! -s dividende_bg.json ]; then
+            echo "dividende_bg.json je prazan ili ne postoji - ne commitam."
+            exit 0
+          fi
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git fetch origin main
+          git reset --soft origin/main
+          git add dividende_bg.json
+          if git diff --cached --quiet; then
+            echo "Nema promjena - ne commitam."
+            exit 0
+          fi
+          git commit -m "Auto: beogradske dividende $(date -u +%F)"
+          git push origin HEAD:main
