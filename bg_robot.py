@@ -152,8 +152,14 @@ def izvuci_datum_prava(tekst):
                 r'(\d{1,2}\.\d{1,2}\.\d{4})[^0-9]{0,30}(?:дан дивиденде|dan dividende|дан акционара|dan akcionara)'):
         m = re.search(pat, tekst, re.I)
         if m: return num_iso(m.group(1))
+    # mjesec-ime nakon "na dan" (npr. Dunav: "na dan 20. aprila 2025")
     m = re.search(r'(?:на дан|na dan)\s+(\d{1,2}\.\s*[^\s,]+\s+\d{4})', tekst, re.I)
-    return srpski_datum(m.group(1)) if m else None
+    if m:
+        d = srpski_datum(m.group(1))
+        if d: return d
+    # numericki datum nakon "na dan" (npr. Jedinstvo: "na dan 31.12.2025")
+    m = re.search(r'(?:на дан|na dan)\s+(\d{1,2}\.\d{1,2}\.\d{4})', tekst, re.I)
+    return num_iso(m.group(1)) if m else None
 
 def analiziraj(tekst):
     t = tekst.lower()
@@ -246,6 +252,9 @@ granica = (datetime.date.today() - datetime.timedelta(days=TTM_DANA)).isoformat(
 prije_ttm = len(konacno)
 konacno = [n for n in konacno if _iso_pub(n) >= granica]
 izbaceno = prije_ttm - len(konacno)
+
+# izbaci gole spomene (npr. prospekt) — zadrzi iznose i istinske najave
+konacno = [n for n in konacno if n["gross"] or n["status"].startswith("najava")]
 
 konacno.sort(key=lambda n: redoslijed.get(n["ticker"], 99))
 
