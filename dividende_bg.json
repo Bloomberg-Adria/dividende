@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-28T08:36",
+  "updated_at": "2026-06-29T09:42",
   "composition": [
     {
       "ticker": "AERO",
@@ -102,11 +102,11 @@
       "ticker": "IMPL",
       "company": "Impol Seval",
       "gross": "372,50",
-      "record_date": null,
-      "pub_date": "31.07.2025",
+      "record_date": "2025-06-09",
+      "pub_date": "12.08.2025",
       "status": "odluka",
-      "title": "Obaveštenje o nameri isplate dividende za 2024. godinu - Impol Seval a.d. , Sevojno",
-      "url": "https://bgdx.rs/data/2025/07/00143129.pdf"
+      "title": "Obaveštenje o isplati dividende - Impol Seval a.d. , Sevojno",
+      "url": "https://bgdx.rs/data/2025/08/00143171.pdf"
     },
     {
       "ticker": "JESV",
