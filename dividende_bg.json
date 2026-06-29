@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-29T09:42",
+  "updated_at": "2026-06-29T11:52",
   "composition": [
     {
       "ticker": "AERO",
@@ -48,16 +48,6 @@
     }
   ],
   "dividends": [
-    {
-      "ticker": "AERO",
-      "company": "Aerodrom Nikola Tesla",
-      "gross": null,
-      "record_date": null,
-      "pub_date": "30.12.2025",
-      "status": "spominje (provjeri)",
-      "title": "Prospekt za javnu ponudu običnih akcija 5. emisije - Aerodrom Nikola Tesla a.d. , Beograd",
-      "url": "https://bgdx.rs/data/2025/12/00144050.pdf"
-    },
     {
       "ticker": "DNOS",
       "company": "Dunav osiguranje",
@@ -112,7 +102,7 @@
       "ticker": "JESV",
       "company": "Jedinstvo",
       "gross": "964,71",
-      "record_date": null,
+      "record_date": "2025-12-31",
       "pub_date": "26.06.2026",
       "status": "odluka",
       "title": "Izveštaj sa održane Skupštine akcionara sa odlukama - Jedinstvo a.d. , Sevojno",
