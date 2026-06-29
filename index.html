@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adria indeksi · Pregled dividendi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1B2A;--ink-soft:#1B2D42;--paper:#F7F8FA;--surface:#FFFFFF;
+    --hair:#E2E6EC;--muted:#5A6675;--amber:#C8861E;--amber-bg:#FBF3E2;
+    --green:#2E7D5B;--green-bg:#E8F2EC;--blue:#2C5F8A;--blue-bg:#E7EFF6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .num{font-family:'IBM Plex Mono',ui-monospace,monospace;font-variant-numeric:tabular-nums}
+
+  header{background:var(--ink);color:#fff;border-bottom:3px solid var(--amber)}
+  .head-inner{max-width:1080px;margin:0 auto;padding:30px 28px 26px}
+  .kicker{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;letter-spacing:-.01em;line-height:1.1}
+  .lead{color:#9FB0C2;font-size:14px;margin-top:10px;max-width:620px}
+
+  main{max-width:1080px;margin:0 auto;padding:30px 28px 60px}
+  .sec-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .card{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--hair);border-radius:12px;padding:22px 24px;transition:border-color .15s,box-shadow .15s,transform .15s}
+  .card.live:hover{border-color:var(--amber);box-shadow:0 6px 22px rgba(14,27,42,.08);transform:translateY(-2px)}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+  .idx{font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;letter-spacing:-.01em}
+  .exch{font-size:13px;color:var(--muted);margin-top:3px}
+  .flag{font-size:12px;font-weight:600;color:var(--blue);background:var(--blue-bg);border-radius:5px;padding:3px 8px;white-space:nowrap}
+  .card-foot{margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .meta{font-size:12.5px;color:var(--muted)}
+  .meta .num{color:var(--ink);font-weight:600}
+  .live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:6px;vertical-align:middle}
+  .go{font-size:13px;font-weight:600;color:var(--amber)}
+
+  .card.soon{opacity:.7;cursor:default}
+  .card.soon .idx{color:var(--muted)}
+  .badge-soon{font-size:11px;font-weight:600;color:var(--muted);background:var(--gray-bg,#EDEFF2);border:1px solid var(--hair);border-radius:20px;padding:3px 10px}
+
+  footer{max-width:1080px;margin:0 auto;padding:10px 28px 60px;font-size:12px;color:var(--muted);line-height:1.7}
+  footer b{color:var(--ink-soft);font-weight:600}
+
+  @media (max-width:720px){
+    .grid{grid-template-columns:1fr}
+    .head-inner,main{padding-left:18px;padding-right:18px}
+    h1{font-size:25px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="head-inner">
+    <div class="kicker">Bloomberg Adria · Dividende</div>
+    <h1>Pregled dividendi — Adria indeksi</h1>
+    <p class="lead">Automatski praćene dividende sastavnica regionalnih burzovnih indeksa. Podaci se osvježavaju svakodnevno, izravno iz službenih objava izdavatelja.</p>
+  </div>
+</header>
+
+<main>
+  <p class="sec-label">Dostupni indeksi</p>
+  <div class="grid" id="live-grid">
+
+    <a class="card live" href="zagreb.html">
+      <div class="card-top">
+        <div>
+          <div class="idx">CROBEX10</div>
+          <div class="exch">Zagrebačka burza</div>
+        </div>
+        <div class="flag">🇭🇷 HR</div>
+      </div>
+      <div class="card-foot">
+        <div class="meta" data-src="dividends.json"><span class="live-dot"></span>učitavam…</div>
+        <div class="go">Otvori →</div>
+      </div>
+    </a>
+
+    <a class="card live" href="beograd.html">
+      <div class="card-top">
+        <div>
+          <div class="idx">BELEX15</div>
+          <div class="exch">Beogradska berza</div>
+        </div>
+        <div class="flag">🇷🇸 RS</div>
+      </div>
+      <div class="card-foot">
+        <div class="meta" data-src="dividende_bg.json"><span class="live-dot"></span>učitavam…</div>
+        <div class="go">Otvori →</div>
+      </div>
+    </a>
+
+  </div>
+
+  <p class="sec-label" style="margin-top:34px">Uskoro</p>
+  <div class="grid">
+    <div class="card soon"><div class="card-top"><div><div class="idx">SBITOP</div><div class="exch">Ljubljanska borza</div></div><div class="flag">🇸🇮 SI</div></div><div class="card-foot"><div class="meta">—</div><span class="badge-soon">Uskoro</span></div></div>
+    <div class="card soon"><div class="card-top"><div><div class="idx">SASX-10</div><div class="exch">Sarajevska berza</div></div><div class="flag">🇧🇦 BA</div></div><div class="card-foot"><div class="meta">—</div><span class="badge-soon">Uskoro</span></div></div>
+    <div class="card soon"><div class="card-top"><div><div class="idx">BIRS</div><div class="exch">Banjalučka berza</div></div><div class="flag">🇧🇦 BA</div></div><div class="card-foot"><div class="meta">—</div><span class="badge-soon">Uskoro</span></div></div>
+    <div class="card soon"><div class="card-top"><div><div class="idx">MONEX</div><div class="exch">Montenegroberza</div></div><div class="flag">🇲🇪 ME</div></div><div class="card-foot"><div class="meta">—</div><span class="badge-soon">Uskoro</span></div></div>
+  </div>
+</main>
+
+<footer>
+  Podaci su <b>informativni</b> i prikupljeni automatski iz javnih objava izdavatelja; nisu investicijski savjet. Iznosi dividendi su bruto po akciji.
+</footer>
+
+<script>
+function fmtDate(iso){
+  const m = String(iso||"").match(/^(\d{4})-(\d{2})-(\d{2})/);
+  return m ? `${m[3]}.${m[2]}.${m[1]}.` : null;
+}
+async function napuni(el){
+  const src = el.getAttribute("data-src");
+  try{
+    const res = await fetch(src, {cache:"no-store"});
+    if(!res.ok) throw 0;
+    const j = await res.json();
+    const divs = Array.isArray(j.dividends) ? j.dividends : (Array.isArray(j)?j:[]);
+    const broj = divs.filter(d=>d && (d.gross || d.gross===undefined)).length || divs.length;
+    const kada = fmtDate(j.updated_at) || "—";
+    el.innerHTML = `<span class="live-dot"></span><span class="num">${divs.length}</span> dividendi · osvježeno <span class="num">${kada}</span>`;
+  }catch(e){
+    el.innerHTML = `<span class="live-dot" style="background:var(--muted)"></span>podaci uskoro`;
+  }
+}
+document.querySelectorAll(".meta[data-src]").forEach(napuni);
+</script>
+</body>
+</html>
