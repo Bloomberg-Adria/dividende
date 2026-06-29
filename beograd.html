@@ -195,8 +195,12 @@ function statusPill(status){
 
 function render(divs){
   const wrap = document.getElementById("rows");
-  // s iznosom prvo (po nicemu posebnom), pa provjere na kraj
-  const sorted = [...divs].sort((a,b)=> (a.gross?0:1) - (b.gross?0:1));
+  // po danu dividende: najnoviji prvo; bez datuma na kraj
+  const sorted = [...divs].sort((a,b)=>{
+    if(!a.record_date && b.record_date) return 1;
+    if(a.record_date && !b.record_date) return -1;
+    return (b.record_date||"").localeCompare(a.record_date||"");
+  });
   wrap.innerHTML = sorted.map(d=>{
     const [cls,label] = statusPill(d.status);
     const dan = fmtDate(d.record_date);
