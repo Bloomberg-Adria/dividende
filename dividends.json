@@ -1,75 +1,75 @@
 {
-  "updated_at": "2026-07-10T11:28",
+  "updated_at": "2026-07-11T09:49",
   "composition": [
     {
       "ticker": "ADPL",
       "company": "AD Plastik",
-      "weight": "1,54%",
-      "price": "29,90",
-      "change": "-0,66%"
+      "weight": "1,57%",
+      "price": "30,30",
+      "change": "+0,66%"
     },
     {
       "ticker": "ADRS2",
       "company": "Adris grupa (pref.)",
-      "weight": "11,68%",
-      "price": "103,50",
-      "change": "+2,48%"
+      "weight": "11,52%",
+      "price": "101,50",
+      "change": "+0,50%"
     },
     {
       "ticker": "ATGR",
       "company": "Atlantic Grupa",
-      "weight": "5,41%",
-      "price": "51,50",
-      "change": "-"
+      "weight": "5,34%",
+      "price": "50,50",
+      "change": "-1,94%"
     },
     {
       "ticker": "HPB",
       "company": "Hrvatska poštanska banka",
-      "weight": "3,55%",
+      "weight": "3,57%",
       "price": "334,00",
       "change": "+1,21%"
     },
     {
       "ticker": "HT",
       "company": "Hrvatski Telekom",
-      "weight": "19,25%",
-      "price": "41,40",
-      "change": "+0,24%"
+      "weight": "19,23%",
+      "price": "41,10",
+      "change": "-0,48%"
     },
     {
       "ticker": "KODT",
       "company": "Končar – Distributivni i specijalni transformatori",
-      "weight": "10,71%",
-      "price": "4.500,00",
-      "change": "-0,44%"
+      "weight": "10,89%",
+      "price": "4.550,00",
+      "change": "+0,66%"
     },
     {
       "ticker": "KOEI",
       "company": "Končar",
-      "weight": "18,06%",
-      "price": "1.010,00",
-      "change": "+1,41%"
+      "weight": "17,97%",
+      "price": "999,00",
+      "change": "+0,30%"
     },
     {
       "ticker": "PODR",
       "company": "Podravka",
-      "weight": "17,27%",
-      "price": "163,00",
-      "change": "-"
+      "weight": "17,26%",
+      "price": "162,00",
+      "change": "-0,61%"
     },
     {
       "ticker": "RIVP",
       "company": "Valamar Riviera",
-      "weight": "10,05%",
-      "price": "8,28",
-      "change": "-0,24%"
+      "weight": "10,18%",
+      "price": "8,34",
+      "change": "+0,48%"
     },
     {
       "ticker": "ZITO",
       "company": "Žito",
-      "weight": "2,49%",
-      "price": "18,50",
-      "change": "+0,54%"
+      "weight": "2,48%",
+      "price": "18,30",
+      "change": "-0,54%"
     }
   ],
   "dividends": [
@@ -144,7 +144,7 @@
       "ticker": "KOEI",
       "gross": 4.0,
       "currency": "EUR",
-      "status": "ex",
+      "status": "paid",
       "ex_date": "2026-06-25",
       "record_date": "2026-06-26",
       "payment_date": "2026-07-10",
@@ -155,22 +155,11 @@
       "ticker": "PODR",
       "gross": 3.2,
       "currency": "EUR",
-      "status": "ex",
+      "status": "paid",
       "ex_date": "2026-06-29",
       "record_date": "2026-06-30",
       "payment_date": "2026-07-10",
       "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/67292"
-    },
-    {
-      "company": "Podravka",
-      "ticker": "PODR",
-      "gross": 3.2,
-      "currency": "EUR",
-      "status": "paid",
-      "ex_date": "2025-07-16",
-      "record_date": "2025-07-17",
-      "payment_date": "2025-07-30",
-      "source_url": "https://eho.zse.hr/obavijesti-izdavatelja/view/62097"
     },
     {
       "company": "Valamar Riviera",
