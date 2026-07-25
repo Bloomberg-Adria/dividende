@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-24T07:47",
+  "updated_at": "2026-07-25T07:31",
   "composition": [
     {
       "ticker": "AERO",
@@ -48,16 +48,6 @@
     }
   ],
   "dividends": [
-    {
-      "ticker": "DNOS",
-      "company": "Dunav osiguranje",
-      "gross": "121,45",
-      "record_date": "2025-04-20",
-      "pub_date": "30.04.2025",
-      "status": "odluka",
-      "title": "Odluka o raspodeli dobiti za 2024. godinu - Dunav osiguranje a.d. , Beograd",
-      "url": "https://bgdx.rs/data/2025/04/00141616.pdf"
-    },
     {
       "ticker": "NIIS",
       "company": "NIS",
