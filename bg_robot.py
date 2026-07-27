@@ -183,19 +183,22 @@ def dohvati_cijenu(symbol):
     except Exception as e:
         print(f"    (ne mogu dohvatiti cijenu za {symbol}: {e})")
         return None, None
-    # gledaj samo dio oko 'Dnevni podaci' (da ne pokupimo '52 nedelje' i sl.)
-    i = h.find("Dnevni podaci")
-    if i != -1:
-        h = h[i:i + 5000]
+
+    # skini oznake pa radi na cistom tekstu
     t = re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", " ", h)))
 
+    # vezi se na PRAVU tablicu: "Dnevni podaci 24.07.2026."
+    # (u izborniku postoji istoimena stavka bez datuma — nju preskacemo)
+    m0 = re.search(r"Dnevni podaci\s+\d{1,2}\.\d{1,2}\.\d{4}", t)
+    dio = t[m0.start(): m0.start() + 900] if m0 else t
+
     cijena = None
-    m = re.search(r"\bCena\s+([\d.]+(?:,\d+)?)\b", t)   # 'Cena otvaranja' ne hvata
+    m = re.search(r"\bCena\s+([\d.]+(?:,\d+)?)", dio)   # 'Cena otvaranja' ne hvata
     if m:
         cijena = m.group(1)
 
     promjena = None
-    m2 = re.search(r"\bPromena\s+(-?[\d.]+(?:,\d+)?)\s*%", t)
+    m2 = re.search(r"\bPromena\s+(-?[\d.]+(?:,\d+)?)\s*%", dio)
     if m2:
         broj = m2.group(1)
         try:
