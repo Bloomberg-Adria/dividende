@@ -175,6 +175,50 @@ def analiziraj(tekst):
         status = "spominje (provjeri)"
     return {"iznos": iznos, "datum_prava": datum_prava, "status": status}
 
+def dohvati_cijenu(symbol):
+    """Zadnja cijena i dnevna promjena s bgdx.rs (blok 'Dnevni podaci').
+    Vraca npr. ('1.890', '+1,94%') ili (None, None) ako ne uspije."""
+    try:
+        h = dohvati_tekst(f"https://bgdx.rs/trgovanje/hartija/dnevni/{symbol}")
+    except Exception as e:
+        print(f"    (ne mogu dohvatiti cijenu za {symbol}: {e})")
+        return None, None
+    # gledaj samo dio oko 'Dnevni podaci' (da ne pokupimo '52 nedelje' i sl.)
+    i = h.find("Dnevni podaci")
+    if i != -1:
+        h = h[i:i + 5000]
+    t = re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", " ", h)))
+
+    cijena = None
+    m = re.search(r"\bCena\s+([\d.]+(?:,\d+)?)\b", t)   # 'Cena otvaranja' ne hvata
+    if m:
+        cijena = m.group(1)
+
+    promjena = None
+    m2 = re.search(r"\bPromena\s+(-?[\d.]+(?:,\d+)?)\s*%", t)
+    if m2:
+        broj = m2.group(1)
+        try:
+            v = float(broj.replace(".", "").replace(",", "."))
+            promjena = ("+" if v > 0 else "") + broj + "%"
+        except ValueError:
+            promjena = broj + "%"
+    return cijena, promjena
+
+
+def dohvati_sastav_s_cijenama():
+    """Sastav BELEX15 + zadnje cijene (za prikaz i dividendni prinos)."""
+    print("Dohvacam cijene sastavnica...")
+    sastav = []
+    for t, n, w in BELEX15:
+        c, p = dohvati_cijenu(t)
+        print(f"   {t:5} {c or '—':>10} {p or ''}")
+        sastav.append({"ticker": t, "company": n, "weight": w,
+                       "price": c, "change": p})
+        time.sleep(0.3)
+    return sastav
+
+
 # ---------- obrada jedne firme ----------
 def obradi_firmu(ticker, naziv):
     print(f"\n=== {ticker} ({naziv}) ===")
@@ -231,7 +275,7 @@ if arg == "SVE":
 else:
     firme = [f for f in BELEX15 if f[0] == arg] or [(arg, arg, "")]
 
-sastav = [{"ticker": t, "company": n, "weight": w} for t, n, w in BELEX15]
+sastav = dohvati_sastav_s_cijenama()
 
 print("BEOGRAD robot (Faza 1) — krecem...")
 sve = []
