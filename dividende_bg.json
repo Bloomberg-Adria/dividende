@@ -1,50 +1,68 @@
 {
-  "updated_at": "2026-07-27T08:46",
+  "updated_at": "2026-07-27T09:16",
   "composition": [
     {
       "ticker": "AERO",
       "company": "Aerodrom Nikola Tesla",
-      "weight": "20,00%"
+      "weight": "20,00%",
+      "price": null,
+      "change": null
     },
     {
       "ticker": "DNOS",
       "company": "Dunav osiguranje",
-      "weight": "20,00%"
+      "weight": "20,00%",
+      "price": null,
+      "change": null
     },
     {
       "ticker": "NIIS",
       "company": "NIS",
-      "weight": "20,00%"
+      "weight": "20,00%",
+      "price": null,
+      "change": null
     },
     {
       "ticker": "TGAS",
       "company": "Messer Tehnogas",
-      "weight": "17,22%"
+      "weight": "17,22%",
+      "price": null,
+      "change": null
     },
     {
       "ticker": "MTLC",
       "company": "Metalac",
-      "weight": "10,93%"
+      "weight": "10,93%",
+      "price": null,
+      "change": null
     },
     {
       "ticker": "IMPL",
       "company": "Impol Seval",
-      "weight": "3,57%"
+      "weight": "3,57%",
+      "price": null,
+      "change": null
     },
     {
       "ticker": "JESV",
       "company": "Jedinstvo",
-      "weight": "3,26%"
+      "weight": "3,26%",
+      "price": null,
+      "change": null
     },
     {
       "ticker": "FINT",
       "company": "Fintel energija",
-      "weight": "2,99%"
+      "weight": "2,99%",
+      "price": null,
+      "change": null
     },
     {
       "ticker": "ENHL",
       "company": "Energoprojekt holding",
-      "weight": "2,03%"
+      "weight": "2,03%",
+      "price": null,
+      "change": null
     }
   ],
   "dividends": [
