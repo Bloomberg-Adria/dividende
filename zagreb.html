@@ -101,11 +101,6 @@
   .sastav-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;gap:12px;flex-wrap:wrap}
   .sastav-head h2{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;letter-spacing:.02em}
   .sastav-head .meta{font-size:12px;color:var(--muted)}
-  .btn-xls{display:inline-flex;align-items:center;gap:7px;background:var(--ink);color:#fff;border:none;border-radius:7px;padding:8px 14px;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;cursor:pointer;transition:background .15s,transform .12s;white-space:nowrap}
-  .btn-xls:hover{background:var(--amber)}
-  .btn-xls:active{transform:translateY(1px)}
-  .btn-xls:disabled{background:var(--muted);cursor:default;transform:none}
-  .btn-xls svg{width:14px;height:14px;flex:none}
   .sastav-head .meta b{color:var(--ink);font-weight:600}
   .sastav{background:var(--surface);border:1px solid var(--hair);border-radius:10px;overflow:hidden}
   .scol-head,.srow{display:grid;grid-template-columns:.6fr 1.6fr 1.4fr .85fr .75fr .8fr;gap:12px;align-items:center;padding:12px 18px}
@@ -180,13 +175,7 @@
 <section class="sastav-wrap" id="sastav-wrap" style="display:none">
   <div class="sastav-head">
     <h2>Sastav indeksa CROBEX10</h2>
-    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-      <div class="meta" id="sastav-meta"></div>
-      <button class="btn-xls" id="btn-xls" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Preuzmi Excel
-      </button>
-    </div>
+    <div class="meta" id="sastav-meta"></div>
   </div>
   <div class="sastav">
     <div class="scol-head">
@@ -393,73 +382,6 @@ function renderSastav(lista, kadaTekst){
   }).join("");
 }
 
-// ── PREUZIMANJE U EXCEL ─────────────────────────────────────
-let SVE_SASTAV = [];
-
-function podaciZaExcel(){
-  const zaglavlje = ["Oznaka","Društvo","Težina u indeksu (%)","Cijena (EUR)",
-                     "Dnevna promjena (%)","Dividenda (EUR po dionici)","Dividendni prinos (%)"];
-  const redovi = [...SVE_SASTAV]
-    .sort((a,b)=>pctNum(b.weight)-pctNum(a.weight))
-    .map(s=>{
-      const div = zadnjaDividenda(SVE_DIVIDENDE, s.ticker);
-      const p = prinos(div, s.ticker);
-      return [ s.ticker||"", s.company||"",
-               pctNum(s.weight), cijenaBroj(s.price), pctNum(s.change),
-               div!=null ? Number(div) : null,
-               p!=null ? Number(p.toFixed(2)) : null ];
-    });
-  return [zaglavlje, ...redovi];
-}
-
-function imeDatoteke(ext){
-  const d = new Date(), p = n=>String(n).padStart(2,"0");
-  return `CROBEX10_dividende_${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}.${ext}`;
-}
-
-// pricuva: ako se Excel knjiznica ne ucita, spremi CSV koji Excel otvara
-function skiniCSV(){
-  const txt = podaciZaExcel().map(r=>r.map(v=>{
-    if(v==null) return "";
-    if(typeof v === "number") return String(v).replace(".",",");
-    return `"${String(v).replace(/"/g,'""')}"`;
-  }).join(";")).join("\r\n");
-  const blob = new Blob(["\uFEFF"+txt], {type:"text/csv;charset=utf-8;"});
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = imeDatoteke("csv");
-  a.click();
-  URL.revokeObjectURL(a.href);
-}
-
-function ucitajSheetJS(){
-  return new Promise((ok, ne)=>{
-    if(window.XLSX) return ok();
-    const s = document.createElement("script");
-    s.src = "https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js";
-    s.onload = ()=>ok(); s.onerror = ()=>ne();
-    document.head.appendChild(s);
-  });
-}
-
-async function preuzmiExcel(){
-  const btn = document.getElementById("btn-xls");
-  const stari = btn.innerHTML;
-  btn.disabled = true; btn.textContent = "Pripremam…";
-  try{
-    await ucitajSheetJS();
-    const ws = XLSX.utils.aoa_to_sheet(podaciZaExcel());
-    ws["!cols"] = [{wch:9},{wch:34},{wch:19},{wch:12},{wch:19},{wch:24},{wch:19}];
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "CROBEX10");
-    XLSX.writeFile(wb, imeDatoteke("xlsx"));
-  }catch(e){
-    skiniCSV();
-  }finally{
-    btn.disabled = false; btn.innerHTML = stari;
-  }
-}
-
 async function init(){
   let data = SAMPLE_DATA, comp = SAMPLE_SASTAV, live=false, stamp=null;
   try{
@@ -482,12 +404,10 @@ async function init(){
     (live ? "" : " (ogledno)");
   document.getElementById("updated-ts").textContent = kadaTekst;
   SVE_DIVIDENDE = data;          // za racun prinosa
-  SVE_SASTAV = comp;             // za preuzimanje u Excel
   gradiCijene(comp);             // cijene iz sastava indeksa
   render(data.map(r=>({...r})));
   renderSastav(comp, kadaTekst);
 }
-document.getElementById("btn-xls").addEventListener("click", preuzmiExcel);
 init();
 </script>
 </body>
