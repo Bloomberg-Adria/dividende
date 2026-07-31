@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-30T07:48",
+  "updated_at": "2026-07-31T08:05",
   "composition": [
     {
       "ticker": "AERO",
@@ -12,8 +12,8 @@
       "ticker": "DNOS",
       "company": "Dunav osiguranje",
       "weight": "20,00%",
-      "price": "1.852",
-      "change": "-0,59%"
+      "price": "1.850",
+      "change": "-0,11%"
     },
     {
       "ticker": "NIIS",
@@ -26,15 +26,15 @@
       "ticker": "TGAS",
       "company": "Messer Tehnogas",
       "weight": "17,22%",
-      "price": "33.206",
-      "change": "0,00%"
+      "price": "35.864",
+      "change": "+8,00%"
     },
     {
       "ticker": "MTLC",
       "company": "Metalac",
       "weight": "10,93%",
       "price": "2.010",
-      "change": "-1,95%"
+      "change": "0,00%"
     },
     {
       "ticker": "IMPL",
