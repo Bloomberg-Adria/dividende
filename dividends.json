@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-31T10:44",
+  "updated_at": "2026-08-01T10:14",
   "composition": [
     {
       "ticker": "ADPL",
@@ -11,16 +11,16 @@
     {
       "ticker": "ADRS2",
       "company": "Adris grupa (pref.)",
-      "weight": "12,42%",
-      "price": "109,00",
-      "change": "0,00%"
+      "weight": "12,55%",
+      "price": "110,00",
+      "change": "+0,92%"
     },
     {
       "ticker": "ATGR",
       "company": "Atlantic Grupa",
-      "weight": "5,30%",
-      "price": "50,00",
-      "change": "-"
+      "weight": "5,25%",
+      "price": "49,40",
+      "change": "-1,20%"
     },
     {
       "ticker": "HPB",
@@ -32,44 +32,44 @@
     {
       "ticker": "HT",
       "company": "Hrvatski Telekom",
-      "weight": "18,79%",
-      "price": "40,00",
-      "change": "-0,25%"
+      "weight": "18,76%",
+      "price": "39,90",
+      "change": "-0,50%"
     },
     {
       "ticker": "KODT",
       "company": "Končar – Distributivni i specijalni transformatori",
-      "weight": "10,81%",
-      "price": "4.500,00",
-      "change": "0,00%"
+      "weight": "10,80%",
+      "price": "4.490,00",
+      "change": "-0,22%"
     },
     {
       "ticker": "KOEI",
       "company": "Končar",
-      "weight": "18,28%",
-      "price": "1.012,00",
-      "change": "-0,59%"
+      "weight": "18,26%",
+      "price": "1.010,00",
+      "change": "-0,79%"
     },
     {
       "ticker": "PODR",
       "company": "Podravka",
-      "weight": "16,58%",
-      "price": "155,00",
-      "change": "-"
+      "weight": "16,76%",
+      "price": "156,50",
+      "change": "+0,97%"
     },
     {
       "ticker": "RIVP",
       "company": "Valamar Riviera",
-      "weight": "10,49%",
-      "price": "8,56",
-      "change": "+0,94%"
+      "weight": "10,33%",
+      "price": "8,42",
+      "change": "-0,71%"
     },
     {
       "ticker": "ZITO",
       "company": "Žito",
-      "weight": "2,50%",
-      "price": "18,40",
-      "change": "+0,55%"
+      "weight": "2,45%",
+      "price": "18,00",
+      "change": "-1,64%"
     }
   ],
   "dividends": [
