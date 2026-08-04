@@ -1,26 +1,26 @@
 {
-  "updated_at": "2026-08-03T11:36",
+  "updated_at": "2026-08-04T10:31",
   "composition": [
     {
       "ticker": "ADPL",
       "company": "AD Plastik",
       "weight": "1,35%",
       "price": "26,00",
-      "change": "+1,17%"
+      "change": "-"
     },
     {
       "ticker": "ADRS2",
       "company": "Adris grupa (pref.)",
-      "weight": "12,41%",
+      "weight": "12,42%",
       "price": "109,00",
       "change": "-0,91%"
     },
     {
       "ticker": "ATGR",
       "company": "Atlantic Grupa",
-      "weight": "5,30%",
-      "price": "50,00",
-      "change": "+1,21%"
+      "weight": "5,27%",
+      "price": "49,60",
+      "change": "-"
     },
     {
       "ticker": "HPB",
@@ -32,44 +32,44 @@
     {
       "ticker": "HT",
       "company": "Hrvatski Telekom",
-      "weight": "18,83%",
+      "weight": "18,84%",
       "price": "40,10",
-      "change": "+0,50%"
+      "change": "0,00%"
     },
     {
       "ticker": "KODT",
       "company": "Končar – Distributivni i specijalni transformatori",
-      "weight": "10,86%",
-      "price": "4.520,00",
-      "change": "+0,67%"
+      "weight": "10,82%",
+      "price": "4.500,00",
+      "change": "0,00%"
     },
     {
       "ticker": "KOEI",
       "company": "Končar",
-      "weight": "18,31%",
-      "price": "1.014,00",
-      "change": "+0,40%"
+      "weight": "18,25%",
+      "price": "1.010,00",
+      "change": "0,00%"
     },
     {
       "ticker": "PODR",
       "company": "Podravka",
-      "weight": "16,68%",
-      "price": "156,00",
-      "change": "-0,32%"
+      "weight": "16,59%",
+      "price": "155,00",
+      "change": "0,00%"
     },
     {
       "ticker": "RIVP",
       "company": "Valamar Riviera",
-      "weight": "10,36%",
-      "price": "8,46",
-      "change": "+0,48%"
+      "weight": "10,52%",
+      "price": "8,58",
+      "change": "+0,23%"
     },
     {
       "ticker": "ZITO",
       "company": "Žito",
-      "weight": "2,40%",
-      "price": "17,70",
-      "change": "-1,67%"
+      "weight": "2,43%",
+      "price": "17,90",
+      "change": "-"
     }
   ],
   "dividends": [
