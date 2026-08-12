@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-08-11T06:08",
+  "updated_at": "2026-08-12T06:28",
   "composition": [
     {
       "ticker": "AERO",
       "company": "Aerodrom Nikola Tesla",
       "weight": "20,00%",
-      "price": "2.086",
-      "change": "+0,05%"
+      "price": "2.089",
+      "change": "+0,14%"
     },
     {
       "ticker": "DNOS",
       "company": "Dunav osiguranje",
       "weight": "20,00%",
       "price": "1.849",
-      "change": "+0,65%"
+      "change": "0,00%"
     },
     {
       "ticker": "NIIS",
@@ -26,8 +26,8 @@
       "ticker": "TGAS",
       "company": "Messer Tehnogas",
       "weight": "17,22%",
-      "price": "45.500",
-      "change": "+6,89%"
+      "price": "48.454",
+      "change": "+6,49%"
     },
     {
       "ticker": "MTLC",
