@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-08-12T06:28",
+  "updated_at": "2026-08-13T06:30",
   "composition": [
     {
       "ticker": "AERO",
       "company": "Aerodrom Nikola Tesla",
       "weight": "20,00%",
-      "price": "2.089",
-      "change": "+0,14%"
+      "price": "2.090",
+      "change": "+0,05%"
     },
     {
       "ticker": "DNOS",
@@ -27,7 +27,7 @@
       "company": "Messer Tehnogas",
       "weight": "17,22%",
       "price": "48.454",
-      "change": "+6,49%"
+      "change": "0,00%"
     },
     {
       "ticker": "MTLC",
