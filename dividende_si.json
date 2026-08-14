@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-13T07:11",
+  "updated_at": "2026-08-14T07:06",
   "composition": [
     {
       "ticker": "CICG",
@@ -18,15 +18,15 @@
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "27,66%",
-      "price": "259,50",
+      "weight": "27,72%",
+      "price": "260,00",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "8,17%",
-      "price": "129,00",
+      "weight": "8,24%",
+      "price": "130,00",
       "change": "0,00%"
     },
     {
@@ -46,8 +46,8 @@
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "7,57%",
-      "price": "90,00",
+      "weight": "7,52%",
+      "price": "89,40",
       "change": "0,00%"
     },
     {
@@ -60,22 +60,22 @@
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,69%",
-      "price": "153,00",
+      "weight": "3,72%",
+      "price": "154,00",
       "change": "0,00%"
     },
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
-      "weight": "0,31%",
-      "price": "1,38",
+      "weight": "0,30%",
+      "price": "1,32",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "6,71%",
-      "price": "70,80",
+      "weight": "6,61%",
+      "price": "69,80",
       "change": "0,00%"
     }
   ],
