@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-09-01T10:31",
+  "updated_at": "2026-09-02T09:58",
   "composition": [
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
-      "weight": "1,62%",
+      "weight": "1,61%",
       "price": "30,40",
       "change": "0,00%"
     },
@@ -18,63 +18,63 @@
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "28,28%",
-      "price": "263,50",
+      "weight": "28,25%",
+      "price": "264,50",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "8,39%",
-      "price": "131,50",
+      "weight": "8,25%",
+      "price": "130,00",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "18,49%",
-      "price": "224,00",
+      "weight": "18,65%",
+      "price": "227,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "18,90%",
-      "price": "63,00",
+      "weight": "19,00%",
+      "price": "63,60",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "7,45%",
+      "weight": "7,41%",
       "price": "88,00",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "6,07%",
-      "price": "68,50",
+      "weight": "6,09%",
+      "price": "69,00",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,81%",
-      "price": "157,00",
+      "weight": "3,77%",
+      "price": "156,00",
       "change": "0,00%"
     },
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
       "weight": "0,31%",
-      "price": "1,35",
+      "price": "1,36",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "6,45%",
+      "weight": "6,42%",
       "price": "67,60",
       "change": "0,00%"
     }
@@ -83,13 +83,13 @@
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
-      "gross": "1,80",
-      "record_date": "2026-06-29",
+      "gross": "0,9",
+      "record_date": null,
       "payment_date": null,
-      "pub_date": "20. 05. 2026",
-      "doc_id": "92794",
+      "pub_date": "2. 09. 2026",
+      "doc_id": "93124",
       "source": "PDF",
-      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=92794"
+      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=93124"
     },
     {
       "ticker": "EQNX",
