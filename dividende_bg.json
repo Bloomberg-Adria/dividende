@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-02T09:32",
+  "updated_at": "2026-09-03T09:43",
   "composition": [
     {
       "ticker": "AERO",
       "company": "Aerodrom Nikola Tesla",
       "weight": "20,00%",
-      "price": "2.089",
-      "change": "+0,05%"
+      "price": "2.088",
+      "change": "-0,05%"
     },
     {
       "ticker": "DNOS",
@@ -34,7 +34,7 @@
       "company": "Metalac",
       "weight": "10,93%",
       "price": "2.080",
-      "change": "+4,10%"
+      "change": "0,00%"
     },
     {
       "ticker": "IMPL",
@@ -61,8 +61,8 @@
       "ticker": "ENHL",
       "company": "Energoprojekt holding",
       "weight": "2,03%",
-      "price": "463",
-      "change": "+0,65%"
+      "price": "461",
+      "change": "-0,43%"
     }
   ],
   "dividends": [
