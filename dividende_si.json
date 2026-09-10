@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-09T10:07",
+  "updated_at": "2026-09-10T10:07",
   "composition": [
     {
       "ticker": "CICG",
@@ -12,70 +12,70 @@
       "ticker": "EQNX",
       "company": "Equinox",
       "weight": "0,25%",
-      "price": "68,50",
+      "price": "68,00",
       "change": "0,00%"
     },
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "28,14%",
-      "price": "262,00",
+      "weight": "27,89%",
+      "price": "260,50",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "8,33%",
-      "price": "130,50",
+      "weight": "8,24%",
+      "price": "129,50",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "18,35%",
-      "price": "222,00",
+      "weight": "18,53%",
+      "price": "225,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "19,22%",
+      "weight": "19,16%",
       "price": "64,00",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "7,37%",
-      "price": "87,00",
+      "weight": "7,43%",
+      "price": "88,00",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "6,21%",
+      "weight": "6,19%",
       "price": "70,00",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,74%",
+      "weight": "3,73%",
       "price": "154,00",
       "change": "0,00%"
     },
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
-      "weight": "0,38%",
-      "price": "1,66",
+      "weight": "0,54%",
+      "price": "2,35",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "6,38%",
-      "price": "66,80",
+      "weight": "6,43%",
+      "price": "67,60",
       "change": "0,00%"
     }
   ],
