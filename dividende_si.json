@@ -1,81 +1,81 @@
 {
-  "updated_at": "2026-09-10T10:07",
+  "updated_at": "2026-09-11T10:03",
   "composition": [
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
-      "weight": "1,62%",
-      "price": "30,40",
+      "weight": "1,61%",
+      "price": "30,30",
       "change": "0,00%"
     },
     {
       "ticker": "EQNX",
       "company": "Equinox",
       "weight": "0,25%",
-      "price": "68,00",
+      "price": "67,50",
       "change": "0,00%"
     },
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "27,89%",
-      "price": "260,50",
+      "weight": "27,98%",
+      "price": "261,00",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "8,24%",
-      "price": "129,50",
+      "weight": "8,28%",
+      "price": "130,00",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "18,53%",
+      "weight": "18,56%",
       "price": "225,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "19,16%",
+      "weight": "19,19%",
       "price": "64,00",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "7,43%",
-      "price": "88,00",
+      "weight": "7,46%",
+      "price": "88,20",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "6,19%",
-      "price": "70,00",
+      "weight": "6,11%",
+      "price": "69,00",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,73%",
-      "price": "154,00",
+      "weight": "3,76%",
+      "price": "155,00",
       "change": "0,00%"
     },
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
-      "weight": "0,54%",
-      "price": "2,35",
+      "weight": "0,40%",
+      "price": "1,76",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "6,43%",
-      "price": "67,60",
+      "weight": "6,40%",
+      "price": "67,20",
       "change": "0,00%"
     }
   ],
