@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-09-13T10:38",
+  "updated_at": "2026-09-14T11:04",
   "composition": [
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
       "weight": "1,61%",
-      "price": "30,30",
+      "price": "30,20",
       "change": "0,00%"
     },
     {
@@ -18,64 +18,64 @@
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "27,90%",
-      "price": "260,00",
+      "weight": "28,06%",
+      "price": "261,00",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "8,29%",
-      "price": "130,00",
+      "weight": "8,21%",
+      "price": "128,50",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "18,41%",
-      "price": "223,00",
+      "weight": "18,53%",
+      "price": "224,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "19,21%",
+      "weight": "19,24%",
       "price": "64,00",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "7,46%",
-      "price": "88,20",
+      "weight": "7,36%",
+      "price": "86,80",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "6,21%",
-      "price": "70,00",
+      "weight": "6,26%",
+      "price": "70,50",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,76%",
-      "price": "155,00",
+      "weight": "3,72%",
+      "price": "153,00",
       "change": "0,00%"
     },
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
-      "weight": "0,48%",
-      "price": "2,10",
+      "weight": "0,42%",
+      "price": "1,82",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "6,41%",
-      "price": "67,20",
+      "weight": "6,34%",
+      "price": "66,40",
       "change": "0,00%"
     }
   ],
