@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-09-14T13:35",
+  "updated_at": "2026-09-15T12:55",
   "composition": [
     {
       "ticker": "ADPL",
       "company": "AD Plastik",
       "weight": "1,26%",
       "price": "24,30",
-      "change": "-0,82%"
+      "change": "-1,22%"
     },
     {
       "ticker": "ADRS2",
@@ -18,8 +18,8 @@
     {
       "ticker": "ATGR",
       "company": "Atlantic Grupa",
-      "weight": "5,36%",
-      "price": "50,50",
+      "weight": "5,47%",
+      "price": "51,50",
       "change": "0,00%"
     },
     {
@@ -27,49 +27,49 @@
       "company": "Hrvatska poštanska banka",
       "weight": "3,50%",
       "price": "326,00",
-      "change": "-0,61%"
+      "change": "0,00%"
     },
     {
       "ticker": "HT",
       "company": "Hrvatski Telekom",
-      "weight": "18,84%",
-      "price": "40,10",
+      "weight": "18,75%",
+      "price": "39,90",
       "change": "-0,25%"
     },
     {
       "ticker": "KODT",
       "company": "Končar – Distributivni i specijalni transformatori",
-      "weight": "10,46%",
-      "price": "4.350,00",
-      "change": "+0,69%"
+      "weight": "10,51%",
+      "price": "4.370,00",
+      "change": "-"
     },
     {
       "ticker": "KOEI",
       "company": "Končar",
-      "weight": "18,57%",
-      "price": "1.028,00",
-      "change": "+0,19%"
+      "weight": "18,51%",
+      "price": "1.024,00",
+      "change": "-0,19%"
     },
     {
       "ticker": "PODR",
       "company": "Podravka",
-      "weight": "17,23%",
+      "weight": "17,24%",
       "price": "161,00",
-      "change": "+0,31%"
+      "change": "-"
     },
     {
       "ticker": "RIVP",
       "company": "Valamar Riviera",
-      "weight": "10,66%",
-      "price": "8,70",
-      "change": "-0,23%"
+      "weight": "10,62%",
+      "price": "8,66",
+      "change": "-0,92%"
     },
     {
       "ticker": "ZITO",
       "company": "Žito",
-      "weight": "2,38%",
-      "price": "17,50",
-      "change": "-0,57%"
+      "weight": "2,41%",
+      "price": "17,70",
+      "change": "0,00%"
     }
   ],
   "dividends": [
