@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-18T09:36",
+  "updated_at": "2026-09-19T09:27",
   "composition": [
     {
       "ticker": "AERO",
@@ -13,7 +13,7 @@
       "company": "Dunav osiguranje",
       "weight": "20,00%",
       "price": "1.813",
-      "change": "+0,72%"
+      "change": "0,00%"
     },
     {
       "ticker": "NIIS",
@@ -34,7 +34,7 @@
       "company": "Metalac",
       "weight": "10,93%",
       "price": "2.033",
-      "change": "+1,19%"
+      "change": "0,00%"
     },
     {
       "ticker": "IMPL",
@@ -48,7 +48,7 @@
       "company": "Jedinstvo",
       "weight": "3,26%",
       "price": "8.985",
-      "change": "+4,44%"
+      "change": "0,00%"
     },
     {
       "ticker": "FINT",
