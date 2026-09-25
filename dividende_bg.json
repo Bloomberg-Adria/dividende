@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-09-24T09:58",
+  "updated_at": "2026-09-25T10:14",
   "composition": [
     {
       "ticker": "AERO",
       "company": "Aerodrom Nikola Tesla",
       "weight": "20,00%",
-      "price": "2.085",
-      "change": "0,00%"
+      "price": "2.078",
+      "change": "-0,34%"
     },
     {
       "ticker": "DNOS",
       "company": "Dunav osiguranje",
       "weight": "20,00%",
       "price": "1.810",
-      "change": "-0,17%"
+      "change": "0,00%"
     },
     {
       "ticker": "NIIS",
