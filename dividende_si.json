@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-01T11:53",
+  "updated_at": "2026-10-02T11:24",
   "composition": [
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
-      "weight": "1,57%",
-      "price": "29,00",
+      "weight": "1,55%",
+      "price": "28,70",
       "change": "0,00%"
     },
     {
@@ -18,42 +18,42 @@
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "30,10%",
-      "price": "257,50",
+      "weight": "29,78%",
+      "price": "255,00",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "7,26%",
-      "price": "112,00",
+      "weight": "7,64%",
+      "price": "118,00",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "20,93%",
-      "price": "227,00",
+      "weight": "21,01%",
+      "price": "228,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "16,13%",
-      "price": "61,00",
+      "weight": "16,06%",
+      "price": "60,80",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "7,12%",
-      "price": "82,80",
+      "weight": "7,05%",
+      "price": "82,00",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "6,36%",
+      "weight": "6,35%",
       "price": "70,50",
       "change": "0,00%"
     },
@@ -67,15 +67,15 @@
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
-      "weight": "0,43%",
-      "price": "1,72",
+      "weight": "0,41%",
+      "price": "1,65",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "6,46%",
-      "price": "66,60",
+      "weight": "6,49%",
+      "price": "67,00",
       "change": "0,00%"
     }
   ],
