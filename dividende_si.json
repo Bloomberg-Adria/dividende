@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-02T11:24",
+  "updated_at": "2026-10-03T10:40",
   "composition": [
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
-      "weight": "1,55%",
+      "weight": "1,56%",
       "price": "28,70",
       "change": "0,00%"
     },
@@ -18,63 +18,63 @@
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "29,78%",
-      "price": "255,00",
+      "weight": "29,88%",
+      "price": "254,50",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "7,64%",
-      "price": "118,00",
+      "weight": "7,52%",
+      "price": "115,50",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "21,01%",
-      "price": "228,00",
+      "weight": "21,21%",
+      "price": "229,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "16,06%",
-      "price": "60,80",
+      "weight": "15,88%",
+      "price": "59,80",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "7,05%",
-      "price": "82,00",
+      "weight": "7,16%",
+      "price": "82,80",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "6,35%",
-      "price": "70,50",
+      "weight": "6,16%",
+      "price": "68,00",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,39%",
-      "price": "142,00",
+      "weight": "3,43%",
+      "price": "143,00",
       "change": "0,00%"
     },
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
-      "weight": "0,41%",
-      "price": "1,65",
+      "weight": "0,43%",
+      "price": "1,70",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "6,49%",
+      "weight": "6,53%",
       "price": "67,00",
       "change": "0,00%"
     }
