@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-10-02T13:47",
+  "updated_at": "2026-10-03T13:01",
   "composition": [
     {
       "ticker": "ADPL",
       "company": "AD Plastik",
-      "weight": "1,22%",
-      "price": "24,40",
-      "change": "-0,81%"
+      "weight": "1,20%",
+      "price": "24,10",
+      "change": "-2,03%"
     },
     {
       "ticker": "ADRS2",
       "company": "Adris grupa (pref.)",
-      "weight": "13,19%",
-      "price": "114,50",
-      "change": "+4,09%"
+      "weight": "13,01%",
+      "price": "113,00",
+      "change": "+2,73%"
     },
     {
       "ticker": "ATGR",
@@ -25,49 +25,49 @@
     {
       "ticker": "HPB",
       "company": "Hrvatska poštanska banka",
-      "weight": "3,42%",
-      "price": "332,00",
-      "change": "-"
+      "weight": "3,40%",
+      "price": "330,00",
+      "change": "-0,60%"
     },
     {
       "ticker": "HT",
       "company": "Hrvatski Telekom",
-      "weight": "17,83%",
+      "weight": "17,82%",
       "price": "38,80",
       "change": "0,00%"
     },
     {
       "ticker": "KODT",
       "company": "Končar – Distributivni i specijalni transformatori",
-      "weight": "10,24%",
-      "price": "4.440,00",
-      "change": "+0,91%"
+      "weight": "10,29%",
+      "price": "4.460,00",
+      "change": "+1,36%"
     },
     {
       "ticker": "KOEI",
       "company": "Končar",
-      "weight": "20,30%",
-      "price": "1.116,00",
-      "change": "+2,77%"
+      "weight": "20,47%",
+      "price": "1.126,00",
+      "change": "+3,87%"
     },
     {
       "ticker": "PODR",
       "company": "Podravka",
-      "weight": "15,82%",
+      "weight": "15,81%",
       "price": "154,00",
       "change": "+0,65%"
     },
     {
       "ticker": "RIVP",
       "company": "Valamar Riviera",
-      "weight": "10,21%",
-      "price": "8,68",
-      "change": "-1,36%"
+      "weight": "10,23%",
+      "price": "8,70",
+      "change": "-1,14%"
     },
     {
       "ticker": "ZITO",
       "company": "Žito",
-      "weight": "2,43%",
+      "weight": "2,42%",
       "price": "18,60",
       "change": "-0,53%"
     }
