@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-04T11:21",
+  "updated_at": "2026-10-05T12:41",
   "composition": [
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
-      "weight": "1,56%",
-      "price": "28,70",
+      "weight": "1,54%",
+      "price": "28,40",
       "change": "0,00%"
     },
     {
@@ -18,64 +18,64 @@
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "29,88%",
-      "price": "254,50",
+      "weight": "29,92%",
+      "price": "255,50",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "7,52%",
-      "price": "115,50",
+      "weight": "7,47%",
+      "price": "115,00",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "21,21%",
-      "price": "229,00",
+      "weight": "20,97%",
+      "price": "227,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "15,88%",
-      "price": "59,80",
+      "weight": "16,10%",
+      "price": "60,80",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "7,16%",
-      "price": "82,80",
+      "weight": "7,07%",
+      "price": "82,00",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "6,16%",
-      "price": "68,00",
+      "weight": "6,32%",
+      "price": "70,00",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,43%",
-      "price": "143,00",
+      "weight": "3,37%",
+      "price": "141,00",
       "change": "0,00%"
     },
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
-      "weight": "0,43%",
-      "price": "1,70",
+      "weight": "0,39%",
+      "price": "1,56",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "6,53%",
-      "price": "67,00",
+      "weight": "6,60%",
+      "price": "68,00",
       "change": "0,00%"
     }
   ],
