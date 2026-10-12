@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T11:28",
+  "updated_at": "2026-10-12T13:02",
   "composition": [
     {
       "ticker": "AERO",
@@ -12,8 +12,8 @@
       "ticker": "DNOS",
       "company": "Dunav osiguranje",
       "weight": "20,00%",
-      "price": "1.810",
-      "change": "0,00%"
+      "price": "1.800",
+      "change": "-0,55%"
     },
     {
       "ticker": "NIIS",
@@ -34,7 +34,7 @@
       "company": "Metalac",
       "weight": "10,93%",
       "price": "2.140",
-      "change": "+6,41%"
+      "change": "0,00%"
     },
     {
       "ticker": "IMPL",
