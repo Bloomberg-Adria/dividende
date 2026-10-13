@@ -1,81 +1,81 @@
 {
-  "updated_at": "2026-10-12T13:34",
+  "updated_at": "2026-10-13T13:02",
   "composition": [
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
-      "weight": "1,56%",
-      "price": "28,60",
+      "weight": "1,54%",
+      "price": "28,20",
       "change": "0,00%"
     },
     {
       "ticker": "EQNX",
       "company": "Equinox",
       "weight": "0,25%",
-      "price": "65,50",
+      "price": "66,00",
       "change": "0,00%"
     },
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "30,38%",
-      "price": "258,00",
+      "weight": "30,31%",
+      "price": "257,00",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "7,58%",
-      "price": "116,00",
+      "weight": "7,65%",
+      "price": "117,00",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "20,81%",
+      "weight": "20,84%",
       "price": "224,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "15,88%",
+      "weight": "15,90%",
       "price": "59,60",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "7,11%",
-      "price": "82,00",
+      "weight": "7,03%",
+      "price": "81,00",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "6,22%",
+      "weight": "6,23%",
       "price": "68,50",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,39%",
+      "weight": "3,40%",
       "price": "141,00",
       "change": "0,00%"
     },
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
-      "weight": "0,39%",
-      "price": "1,55",
+      "weight": "0,38%",
+      "price": "1,50",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "6,43%",
-      "price": "65,80",
+      "weight": "6,46%",
+      "price": "66,00",
       "change": "0,00%"
     }
   ],
