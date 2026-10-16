@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-10-15T09:52",
+  "updated_at": "2026-10-16T09:46",
   "composition": [
     {
       "ticker": "AERO",
       "company": "Aerodrom Nikola Tesla",
       "weight": "20,00%",
-      "price": "2.035",
-      "change": "0,00%"
+      "price": "2.030",
+      "change": "-0,25%"
     },
     {
       "ticker": "DNOS",
       "company": "Dunav osiguranje",
       "weight": "20,00%",
-      "price": "1.830",
-      "change": "0,00%"
+      "price": "1.804",
+      "change": "-1,42%"
     },
     {
       "ticker": "NIIS",
@@ -26,15 +26,15 @@
       "ticker": "TGAS",
       "company": "Messer Tehnogas",
       "weight": "17,22%",
-      "price": "59.906",
-      "change": "-0,16%"
+      "price": "60.000",
+      "change": "+0,16%"
     },
     {
       "ticker": "MTLC",
       "company": "Metalac",
       "weight": "10,93%",
       "price": "2.021",
-      "change": "+0,80%"
+      "change": "0,00%"
     },
     {
       "ticker": "IMPL",
@@ -81,10 +81,10 @@
       "company": "Messer Tehnogas",
       "gross": "1.115,00",
       "record_date": "2026-06-02",
-      "pub_date": "15.06.2026",
+      "pub_date": "15.10.2026",
       "status": "odluka",
-      "title": "Odluka o raspodeli dobiti - Messer Tehnogas a.d. , Beograd",
-      "url": "https://bgdx.rs/data/2026/06/00145787.pdf"
+      "title": "Obaveštenje akcionarima o isplati dividende - Messer Tehnogas a.d. , Beograd",
+      "url": "https://bgdx.rs/data/2026/10/00147443.pdf"
     },
     {
       "ticker": "MTLC",
