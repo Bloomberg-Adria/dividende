@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-10-20T10:27",
+  "updated_at": "2026-10-21T10:34",
   "composition": [
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
       "weight": "1,55%",
-      "price": "28,20",
+      "price": "28,00",
       "change": "0,00%"
     },
     {
@@ -18,64 +18,64 @@
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "30,42%",
-      "price": "256,50",
+      "weight": "30,65%",
+      "price": "256,00",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "7,56%",
-      "price": "115,00",
+      "weight": "7,57%",
+      "price": "114,00",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "20,77%",
-      "price": "222,00",
+      "weight": "20,78%",
+      "price": "220,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "15,83%",
-      "price": "59,00",
+      "weight": "15,44%",
+      "price": "57,00",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "6,90%",
+      "weight": "6,96%",
       "price": "79,00",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "6,31%",
-      "price": "69,00",
+      "weight": "6,32%",
+      "price": "68,50",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,42%",
+      "weight": "3,45%",
       "price": "141,00",
       "change": "0,00%"
     },
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
-      "weight": "0,37%",
-      "price": "1,46",
+      "weight": "0,38%",
+      "price": "1,49",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "6,63%",
-      "price": "67,40",
+      "weight": "6,65%",
+      "price": "67,00",
       "change": "0,00%"
     }
   ],
