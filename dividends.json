@@ -1,24 +1,24 @@
 {
-  "updated_at": "2026-10-23T12:56",
+  "updated_at": "2026-10-24T12:10",
   "composition": [
     {
       "ticker": "ADPL",
       "company": "AD Plastik",
-      "weight": "1,16%",
-      "price": "23,70",
-      "change": "-0,42%"
+      "weight": "1,15%",
+      "price": "23,60",
+      "change": "-0,84%"
     },
     {
       "ticker": "ADRS2",
       "company": "Adris grupa (pref.)",
-      "weight": "13,19%",
-      "price": "117,00",
-      "change": "0,00%"
+      "weight": "13,23%",
+      "price": "117,50",
+      "change": "+0,43%"
     },
     {
       "ticker": "ATGR",
       "company": "Atlantic Grupa",
-      "weight": "5,29%",
+      "weight": "5,28%",
       "price": "53,00",
       "change": "0,00%"
     },
@@ -32,37 +32,37 @@
     {
       "ticker": "HT",
       "company": "Hrvatski Telekom",
-      "weight": "17,54%",
-      "price": "39,00",
-      "change": "0,00%"
+      "weight": "17,44%",
+      "price": "38,80",
+      "change": "-0,51%"
     },
     {
       "ticker": "KODT",
       "company": "Končar – Distributivni i specijalni transformatori",
-      "weight": "10,28%",
+      "weight": "10,27%",
       "price": "4.550,00",
       "change": "+0,44%"
     },
     {
       "ticker": "KOEI",
       "company": "Končar",
-      "weight": "21,30%",
-      "price": "1.196,00",
-      "change": "0,00%"
+      "weight": "21,35%",
+      "price": "1.200,00",
+      "change": "+0,33%"
     },
     {
       "ticker": "PODR",
       "company": "Podravka",
-      "weight": "15,59%",
+      "weight": "15,57%",
       "price": "155,00",
       "change": "-0,96%"
     },
     {
       "ticker": "RIVP",
       "company": "Valamar Riviera",
-      "weight": "9,79%",
-      "price": "8,50",
-      "change": "-0,47%"
+      "weight": "9,85%",
+      "price": "8,56",
+      "change": "+0,23%"
     },
     {
       "ticker": "ZITO",
