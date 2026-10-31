@@ -1,66 +1,66 @@
 {
-  "updated_at": "2026-10-30T13:02",
+  "updated_at": "2026-10-31T12:37",
   "composition": [
     {
       "ticker": "ADPL",
       "company": "AD Plastik",
       "weight": "1,11%",
-      "price": "22,30",
-      "change": "-0,89%"
+      "price": "22,20",
+      "change": "-1,33%"
     },
     {
       "ticker": "ADRS2",
       "company": "Adris grupa (pref.)",
-      "weight": "12,74%",
-      "price": "110,50",
-      "change": "-3,07%"
+      "weight": "12,80%",
+      "price": "111,00",
+      "change": "-2,63%"
     },
     {
       "ticker": "ATGR",
       "company": "Atlantic Grupa",
-      "weight": "5,61%",
-      "price": "55,00",
-      "change": "+0,92%"
+      "weight": "5,56%",
+      "price": "54,50",
+      "change": "0,00%"
     },
     {
       "ticker": "HPB",
       "company": "Hrvatska poštanska banka",
-      "weight": "3,51%",
-      "price": "340,00",
-      "change": "0,00%"
+      "weight": "3,82%",
+      "price": "370,00",
+      "change": "+8,82%"
     },
     {
       "ticker": "HT",
       "company": "Hrvatski Telekom",
-      "weight": "17,80%",
+      "weight": "17,81%",
       "price": "38,70",
       "change": "0,00%"
     },
     {
       "ticker": "KODT",
       "company": "Končar – Distributivni i specijalni transformatori",
-      "weight": "10,74%",
-      "price": "4.650,00",
-      "change": "+2,65%"
+      "weight": "10,72%",
+      "price": "4.640,00",
+      "change": "+2,43%"
     },
     {
       "ticker": "KOEI",
       "company": "Končar",
-      "weight": "20,93%",
-      "price": "1.150,00",
-      "change": "-2,38%"
+      "weight": "20,59%",
+      "price": "1.130,00",
+      "change": "-4,07%"
     },
     {
       "ticker": "PODR",
       "company": "Podravka",
-      "weight": "15,37%",
+      "weight": "15,38%",
       "price": "149,50",
       "change": "-1,64%"
     },
     {
       "ticker": "RIVP",
       "company": "Valamar Riviera",
-      "weight": "9,84%",
+      "weight": "9,85%",
       "price": "8,36",
       "change": "+0,48%"
     },
