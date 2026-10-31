@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T11:44",
+  "updated_at": "2026-10-31T11:13",
   "composition": [
     {
       "ticker": "CICG",
@@ -18,15 +18,15 @@
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "30,62%",
-      "price": "252,00",
+      "weight": "30,73%",
+      "price": "253,00",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "7,78%",
-      "price": "115,50",
+      "weight": "7,75%",
+      "price": "115,00",
       "change": "0,00%"
     },
     {
@@ -39,15 +39,15 @@
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "15,72%",
-      "price": "57,20",
+      "weight": "15,66%",
+      "price": "57,00",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "6,87%",
-      "price": "76,80",
+      "weight": "6,85%",
+      "price": "76,60",
       "change": "0,00%"
     },
     {
@@ -67,7 +67,7 @@
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
-      "weight": "0,35%",
+      "weight": "0,36%",
       "price": "1,36",
       "change": "0,00%"
     },
