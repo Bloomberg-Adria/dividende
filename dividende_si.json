@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-04T13:20",
+  "updated_at": "2026-11-05T13:34",
   "composition": [
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
-      "weight": "1,57%",
-      "price": "27,80",
+      "weight": "1,55%",
+      "price": "27,70",
       "change": "0,00%"
     },
     {
@@ -18,64 +18,64 @@
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "30,39%",
+      "weight": "30,09%",
       "price": "249,00",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "7,72%",
-      "price": "114,00",
+      "weight": "7,44%",
+      "price": "111,00",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "20,61%",
-      "price": "214,00",
+      "weight": "21,45%",
+      "price": "225,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "15,79%",
-      "price": "57,20",
+      "weight": "15,96%",
+      "price": "58,40",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "6,86%",
-      "price": "76,40",
+      "weight": "6,87%",
+      "price": "77,20",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "6,02%",
-      "price": "64,00",
+      "weight": "5,73%",
+      "price": "61,50",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,57%",
-      "price": "143,00",
+      "weight": "3,48%",
+      "price": "141,00",
       "change": "0,00%"
     },
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
       "weight": "0,37%",
-      "price": "1,40",
+      "price": "1,44",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "6,84%",
-      "price": "67,60",
+      "weight": "6,80%",
+      "price": "67,80",
       "change": "0,00%"
     }
   ],
@@ -130,10 +130,10 @@
       "gross": "6,92",
       "record_date": null,
       "payment_date": null,
-      "pub_date": "6. 08. 2026",
-      "doc_id": "93057",
+      "pub_date": "5. 11. 2026",
+      "doc_id": "93275",
       "source": "PDF",
-      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=93057"
+      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=93275"
     },
     {
       "ticker": "PETG",
