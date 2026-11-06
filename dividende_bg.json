@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-11-05T13:13",
+  "updated_at": "2026-11-06T13:00",
   "composition": [
     {
       "ticker": "AERO",
       "company": "Aerodrom Nikola Tesla",
       "weight": "20,00%",
       "price": "2.027",
-      "change": "-2,08%"
+      "change": "0,00%"
     },
     {
       "ticker": "DNOS",
       "company": "Dunav osiguranje",
       "weight": "20,00%",
-      "price": "1.853",
-      "change": "+0,16%"
+      "price": "1.848",
+      "change": "-0,27%"
     },
     {
       "ticker": "NIIS",
@@ -95,16 +95,6 @@
       "status": "odluka",
       "title": "Ostale informacije - Metalac a.d. , Gornji Milanovac",
       "url": "https://bgdx.rs/data/2026/07/00146495.pdf"
-    },
-    {
-      "ticker": "IMPL",
-      "company": "Impol Seval",
-      "gross": "372,50",
-      "record_date": "2025-06-09",
-      "pub_date": "12.08.2025",
-      "status": "odluka",
-      "title": "Obaveštenje o isplati dividende - Impol Seval a.d. , Sevojno",
-      "url": "https://bgdx.rs/data/2025/08/00143171.pdf"
     },
     {
       "ticker": "JESV",
