@@ -1,73 +1,73 @@
 {
-  "updated_at": "2026-11-06T14:40",
+  "updated_at": "2026-11-07T13:20",
   "composition": [
     {
       "ticker": "ADPL",
       "company": "AD Plastik",
       "weight": "1,09%",
-      "price": "21,20",
-      "change": "-3,20%"
+      "price": "21,30",
+      "change": "-2,74%"
     },
     {
       "ticker": "ADRS2",
       "company": "Adris grupa (pref.)",
-      "weight": "12,89%",
-      "price": "108,50",
-      "change": "-0,46%"
+      "weight": "12,90%",
+      "price": "109,00",
+      "change": "0,00%"
     },
     {
       "ticker": "ATGR",
       "company": "Atlantic Grupa",
-      "weight": "5,57%",
-      "price": "53,00",
-      "change": "-1,85%"
+      "weight": "5,66%",
+      "price": "54,00",
+      "change": "0,00%"
     },
     {
       "ticker": "HPB",
       "company": "Hrvatska poštanska banka",
-      "weight": "3,64%",
-      "price": "342,00",
-      "change": "0,00%"
+      "weight": "3,65%",
+      "price": "344,00",
+      "change": "+0,58%"
     },
     {
       "ticker": "HT",
       "company": "Hrvatski Telekom",
-      "weight": "18,34%",
+      "weight": "18,28%",
       "price": "38,70",
       "change": "-0,26%"
     },
     {
       "ticker": "KODT",
       "company": "Končar – Distributivni i specijalni transformatori",
-      "weight": "10,85%",
-      "price": "4.560,00",
-      "change": "-0,87%"
+      "weight": "10,91%",
+      "price": "4.600,00",
+      "change": "0,00%"
     },
     {
       "ticker": "KOEI",
       "company": "Končar",
-      "weight": "20,53%",
-      "price": "1.094,00",
-      "change": "-0,55%"
+      "weight": "20,57%",
+      "price": "1.100,00",
+      "change": "0,00%"
     },
     {
       "ticker": "PODR",
       "company": "Podravka",
-      "weight": "15,21%",
-      "price": "143,50",
-      "change": "0,00%"
+      "weight": "15,00%",
+      "price": "142,00",
+      "change": "-1,05%"
     },
     {
       "ticker": "RIVP",
       "company": "Valamar Riviera",
-      "weight": "9,47%",
-      "price": "7,80",
-      "change": "-2,01%"
+      "weight": "9,53%",
+      "price": "7,88",
+      "change": "-1,01%"
     },
     {
       "ticker": "ZITO",
       "company": "Žito",
-      "weight": "2,42%",
+      "weight": "2,41%",
       "price": "18,00",
       "change": "0,00%"
     }
