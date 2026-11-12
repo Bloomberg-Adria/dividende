@@ -1,75 +1,75 @@
 {
-  "updated_at": "2026-11-11T14:28",
+  "updated_at": "2026-11-12T15:33",
   "composition": [
     {
       "ticker": "ADPL",
       "company": "AD Plastik",
-      "weight": "1,09%",
-      "price": "21,50",
-      "change": "+0,94%"
+      "weight": "1,05%",
+      "price": "20,80",
+      "change": "-2,35%"
     },
     {
       "ticker": "ADRS2",
       "company": "Adris grupa (pref.)",
-      "weight": "12,97%",
-      "price": "111,00",
-      "change": "+0,91%"
+      "weight": "12,78%",
+      "price": "110,00",
+      "change": "+0,92%"
     },
     {
       "ticker": "ATGR",
       "company": "Atlantic Grupa",
-      "weight": "5,68%",
-      "price": "55,00",
-      "change": "-0,90%"
+      "weight": "5,60%",
+      "price": "54,50",
+      "change": "-0,91%"
     },
     {
       "ticker": "HPB",
       "company": "Hrvatska poštanska banka",
-      "weight": "3,56%",
-      "price": "340,00",
-      "change": "-"
+      "weight": "3,52%",
+      "price": "338,00",
+      "change": "-0,59%"
     },
     {
       "ticker": "HT",
       "company": "Hrvatski Telekom",
-      "weight": "17,99%",
-      "price": "38,60",
-      "change": "+0,26%"
+      "weight": "17,84%",
+      "price": "38,50",
+      "change": "-0,26%"
     },
     {
       "ticker": "KODT",
       "company": "Končar – Distributivni i specijalni transformatori",
-      "weight": "11,05%",
-      "price": "4.720,00",
-      "change": "+1,29%"
+      "weight": "10,94%",
+      "price": "4.700,00",
+      "change": "0,00%"
     },
     {
       "ticker": "KOEI",
       "company": "Končar",
-      "weight": "20,33%",
-      "price": "1.102,00",
-      "change": "+0,18%"
+      "weight": "20,88%",
+      "price": "1.138,00",
+      "change": "+2,71%"
     },
     {
       "ticker": "PODR",
       "company": "Podravka",
-      "weight": "15,27%",
-      "price": "146,50",
-      "change": "+0,69%"
+      "weight": "15,23%",
+      "price": "147,00",
+      "change": "+0,34%"
     },
     {
       "ticker": "RIVP",
       "company": "Valamar Riviera",
-      "weight": "9,69%",
-      "price": "8,12",
-      "change": "+0,50%"
+      "weight": "9,80%",
+      "price": "8,26",
+      "change": "0,00%"
     },
     {
       "ticker": "ZITO",
       "company": "Žito",
-      "weight": "2,38%",
-      "price": "18,00",
-      "change": "0,00%"
+      "weight": "2,35%",
+      "price": "17,90",
+      "change": "-0,56%"
     }
   ],
   "dividends": [
