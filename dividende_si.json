@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-12T14:07",
+  "updated_at": "2026-11-13T13:28",
   "composition": [
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
-      "weight": "1,52%",
+      "weight": "1,51%",
       "price": "27,00",
       "change": "0,00%"
     },
@@ -12,55 +12,55 @@
       "ticker": "EQNX",
       "company": "Equinox",
       "weight": "0,26%",
-      "price": "66,50",
+      "price": "67,00",
       "change": "0,00%"
     },
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "30,36%",
-      "price": "249,50",
+      "weight": "30,56%",
+      "price": "253,00",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "7,29%",
-      "price": "108,00",
+      "weight": "7,34%",
+      "price": "109,50",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "21,51%",
-      "price": "224,00",
+      "weight": "21,26%",
+      "price": "223,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "15,69%",
-      "price": "57,00",
+      "weight": "15,80%",
+      "price": "57,80",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "6,77%",
-      "price": "75,60",
+      "weight": "6,85%",
+      "price": "77,00",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "5,87%",
-      "price": "62,50",
+      "weight": "5,73%",
+      "price": "61,50",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,53%",
+      "weight": "3,51%",
       "price": "142,00",
       "change": "0,00%"
     },
@@ -75,7 +75,7 @@
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
       "weight": "6,84%",
-      "price": "67,80",
+      "price": "68,20",
       "change": "0,00%"
     }
   ],
@@ -116,13 +116,13 @@
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "gross": "2,30",
+      "gross": "2,3",
       "record_date": "2026-08-28",
       "payment_date": null,
-      "pub_date": "22. 05. 2026",
-      "doc_id": "92821",
+      "pub_date": "18. 08. 2026",
+      "doc_id": "93072",
       "source": "PDF",
-      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=92821"
+      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=93072"
     },
     {
       "ticker": "NLBR",
