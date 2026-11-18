@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T14:55",
+  "updated_at": "2026-11-18T14:36",
   "composition": [
     {
       "ticker": "CICG",
@@ -12,55 +12,55 @@
       "ticker": "EQNX",
       "company": "Equinox",
       "weight": "0,26%",
-      "price": "67,00",
+      "price": "67,50",
       "change": "0,00%"
     },
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "30,49%",
-      "price": "251,00",
+      "weight": "30,37%",
+      "price": "249,50",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "7,34%",
-      "price": "109,00",
+      "weight": "7,53%",
+      "price": "111,50",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "20,79%",
-      "price": "217,00",
+      "weight": "20,75%",
+      "price": "216,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "15,93%",
+      "weight": "15,97%",
       "price": "58,00",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "6,99%",
-      "price": "78,20",
+      "weight": "7,02%",
+      "price": "78,40",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "5,71%",
-      "price": "61,00",
+      "weight": "5,63%",
+      "price": "60,00",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,50%",
+      "weight": "3,51%",
       "price": "141,00",
       "change": "0,00%"
     },
@@ -68,14 +68,14 @@
       "ticker": "VZZR",
       "company": "Vzajemna",
       "weight": "0,36%",
-      "price": "1,37",
+      "price": "1,36",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "7,05%",
-      "price": "70,00",
+      "weight": "7,03%",
+      "price": "69,60",
       "change": "0,00%"
     }
   ],
