@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-19T14:44",
+  "updated_at": "2026-11-20T14:22",
   "composition": [
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
-      "weight": "1,54%",
-      "price": "27,40",
+      "weight": "1,56%",
+      "price": "27,30",
       "change": "0,00%"
     },
     {
@@ -18,64 +18,64 @@
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "30,51%",
+      "weight": "30,88%",
       "price": "251,00",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "7,42%",
-      "price": "110,00",
+      "weight": "7,44%",
+      "price": "109,00",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "20,81%",
-      "price": "217,00",
+      "weight": "20,77%",
+      "price": "214,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "15,89%",
-      "price": "57,80",
+      "weight": "15,42%",
+      "price": "55,40",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "7,16%",
-      "price": "80,00",
+      "weight": "7,14%",
+      "price": "78,80",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "5,62%",
-      "price": "60,00",
+      "weight": "5,60%",
+      "price": "59,00",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,50%",
-      "price": "141,00",
+      "weight": "3,57%",
+      "price": "142,00",
       "change": "0,00%"
     },
     {
       "ticker": "VZZR",
       "company": "Vzajemna",
-      "weight": "0,35%",
+      "weight": "0,36%",
       "price": "1,36",
       "change": "0,00%"
     },
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "6,94%",
-      "price": "68,80",
+      "weight": "7,00%",
+      "price": "68,60",
       "change": "0,00%"
     }
   ],
@@ -119,10 +119,10 @@
       "gross": "2,3",
       "record_date": "2026-08-28",
       "payment_date": null,
-      "pub_date": "18. 08. 2026",
-      "doc_id": "93072",
+      "pub_date": "19. 11. 2026",
+      "doc_id": "93349",
       "source": "PDF",
-      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=93072"
+      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=93349"
     },
     {
       "ticker": "NLBR",
@@ -141,10 +141,10 @@
       "gross": "2,1",
       "record_date": null,
       "payment_date": null,
-      "pub_date": "28. 08. 2026",
-      "doc_id": "93114",
+      "pub_date": "20. 11. 2026",
+      "doc_id": "93358",
       "source": "PDF",
-      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=93114"
+      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=93358"
     },
     {
       "ticker": "POSR",
@@ -152,10 +152,10 @@
       "gross": "2,75",
       "record_date": "2026-05-04",
       "payment_date": "2026-06-10",
-      "pub_date": "21. 08. 2026",
-      "doc_id": "93090",
+      "pub_date": "20. 11. 2026",
+      "doc_id": "93354",
       "source": "PDF",
-      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=93090"
+      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=93354"
     },
     {
       "ticker": "SALR",
