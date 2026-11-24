@@ -1,11 +1,11 @@
 {
-  "updated_at": "2026-11-23T16:26",
+  "updated_at": "2026-11-24T16:12",
   "composition": [
     {
       "ticker": "CICG",
       "company": "Cinkarna Celje",
-      "weight": "1,56%",
-      "price": "27,00",
+      "weight": "1,55%",
+      "price": "27,10",
       "change": "0,00%"
     },
     {
@@ -18,49 +18,49 @@
     {
       "ticker": "KRKG",
       "company": "Krka",
-      "weight": "30,66%",
-      "price": "246,50",
+      "weight": "30,95%",
+      "price": "250,50",
       "change": "0,00%"
     },
     {
       "ticker": "LKPG",
       "company": "Luka Koper",
-      "weight": "7,52%",
+      "weight": "7,47%",
       "price": "109,00",
       "change": "0,00%"
     },
     {
       "ticker": "NLBR",
       "company": "Nlb",
-      "weight": "20,81%",
-      "price": "212,00",
+      "weight": "20,57%",
+      "price": "211,00",
       "change": "0,00%"
     },
     {
       "ticker": "PETG",
       "company": "Petrol",
-      "weight": "15,42%",
-      "price": "54,80",
+      "weight": "15,43%",
+      "price": "55,20",
       "change": "0,00%"
     },
     {
       "ticker": "POSR",
       "company": "Pozavarovalnica Sava",
-      "weight": "7,09%",
-      "price": "77,40",
+      "weight": "7,00%",
+      "price": "77,00",
       "change": "0,00%"
     },
     {
       "ticker": "SALR",
       "company": "Salus",
-      "weight": "5,66%",
-      "price": "59,00",
+      "weight": "5,81%",
+      "price": "61,00",
       "change": "0,00%"
     },
     {
       "ticker": "TLSG",
       "company": "Telekom Slovenije",
-      "weight": "3,58%",
+      "weight": "3,56%",
       "price": "141,00",
       "change": "0,00%"
     },
@@ -74,7 +74,7 @@
     {
       "ticker": "ZVTG",
       "company": "Zavarovalnica Triglav",
-      "weight": "7,08%",
+      "weight": "7,03%",
       "price": "68,60",
       "change": "0,00%"
     }
@@ -108,10 +108,10 @@
       "gross": "9,10",
       "record_date": "2026-07-22",
       "payment_date": "2026-07-23",
-      "pub_date": "4. 06. 2026",
-      "doc_id": "92851",
+      "pub_date": "23. 07. 2026",
+      "doc_id": "93014",
       "source": "PDF",
-      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=92851"
+      "url": "https://seonet.ljse.si/default_sl.aspx?doc=SEARCH&doc_id=93014"
     },
     {
       "ticker": "LKPG",
