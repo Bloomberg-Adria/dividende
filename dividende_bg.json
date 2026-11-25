@@ -1,19 +1,19 @@
 {
-  "updated_at": "2026-11-24T15:48",
+  "updated_at": "2026-11-25T15:32",
   "composition": [
     {
       "ticker": "AERO",
       "company": "Aerodrom Nikola Tesla",
       "weight": "20,00%",
-      "price": "2.020",
-      "change": "+1,00%"
+      "price": "2.019",
+      "change": "-0,05%"
     },
     {
       "ticker": "DNOS",
       "company": "Dunav osiguranje",
       "weight": "20,00%",
       "price": "1.800",
-      "change": "-0,50%"
+      "change": "0,00%"
     },
     {
       "ticker": "NIIS",
@@ -47,8 +47,8 @@
       "ticker": "JESV",
       "company": "Jedinstvo",
       "weight": "3,26%",
-      "price": "9.905",
-      "change": "+4,21%"
+      "price": "9.500",
+      "change": "-4,09%"
     },
     {
       "ticker": "FINT",
@@ -62,7 +62,7 @@
       "company": "Energoprojekt holding",
       "weight": "2,03%",
       "price": null,
-      "change": "+3,38%"
+      "change": "-2,24%"
     }
   ],
   "dividends": [
