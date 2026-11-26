@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-25T15:32",
+  "updated_at": "2026-11-26T15:00",
   "composition": [
     {
       "ticker": "AERO",
       "company": "Aerodrom Nikola Tesla",
       "weight": "20,00%",
       "price": "2.019",
-      "change": "-0,05%"
+      "change": "0,00%"
     },
     {
       "ticker": "DNOS",
@@ -48,21 +48,21 @@
       "company": "Jedinstvo",
       "weight": "3,26%",
       "price": "9.500",
-      "change": "-4,09%"
+      "change": "0,00%"
     },
     {
       "ticker": "FINT",
       "company": "Fintel energija",
       "weight": "2,99%",
-      "price": "620",
-      "change": "0,00%"
+      "price": "630",
+      "change": "+1,61%"
     },
     {
       "ticker": "ENHL",
       "company": "Energoprojekt holding",
       "weight": "2,03%",
       "price": null,
-      "change": "-2,24%"
+      "change": "+0,67%"
     }
   ],
   "dividends": [
