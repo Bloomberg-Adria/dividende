@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26T15:00",
+  "updated_at": "2026-11-27T14:56",
   "composition": [
     {
       "ticker": "AERO",
@@ -12,8 +12,8 @@
       "ticker": "DNOS",
       "company": "Dunav osiguranje",
       "weight": "20,00%",
-      "price": "1.800",
-      "change": "0,00%"
+      "price": "1.799",
+      "change": "-0,06%"
     },
     {
       "ticker": "NIIS",
@@ -55,14 +55,14 @@
       "company": "Fintel energija",
       "weight": "2,99%",
       "price": "630",
-      "change": "+1,61%"
+      "change": "0,00%"
     },
     {
       "ticker": "ENHL",
       "company": "Energoprojekt holding",
       "weight": "2,03%",
       "price": null,
-      "change": "+0,67%"
+      "change": "-0,15%"
     }
   ],
   "dividends": [
